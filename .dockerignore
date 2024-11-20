@@ -41,4 +41,4 @@ backup/
 
 # Ignore arquivos específicos do ASP.NET Core Identity (se forem gerados automaticamente)
 *.db
-.vs/
+Identity.API\.vs\
