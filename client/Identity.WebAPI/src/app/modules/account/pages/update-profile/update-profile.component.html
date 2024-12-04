@@ -1,0 +1,32 @@
+<div class="auth-container">
+    <div class="auth-form">
+      <h2>Atualizar Cadastro</h2>
+      <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input formControlName="nome" type="text" id="name" placeholder="Atualize seu nome" required />
+        </div>
+  
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input formControlName="email" type="email" id="email" placeholder="Atualize seu e-mail" required />
+        </div>
+  
+        <div class="form-group">
+          <label for="telefone">Telefone</label>
+          <input formControlName="telefone" type="phone" id="phone" placeholder="Atualize seu telefone" required />
+        </div>
+  
+        <div class="form-group">
+          <label for="birthDate">Data de Nascimento</label>
+          <input id="birthDate" formControlName="dataNascimento" type="date" required />
+        </div>
+  
+        <button type="submit" class="btn-submit">Atualizar Cadastro</button>
+      </form>
+      <p class="login-link">
+        Deseja voltar? <a routerLink="/account/profile">Voltar ao perfil</a>
+      </p>
+    </div>
+  </div>
+  

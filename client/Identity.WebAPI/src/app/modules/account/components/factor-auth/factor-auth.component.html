@@ -1,0 +1,23 @@
+<div class="two-factor-auth-container">
+  <div class="two-factor-auth-form">
+    <h2>Autenticação de Dois Fatores</h2>
+    <form [formGroup]="twoFactorForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="code">Código de Autenticação</label>
+        <div class="code-inputs">
+          <input id="code1" formControlName="code1" type="text" maxlength="1" #codeInput (paste)="onPaste($event)" />
+          <input id="code2" formControlName="code2" type="text" maxlength="1" #codeInput (paste)="onPaste($event)" />
+          <input id="code3" formControlName="code3" type="text" maxlength="1" #codeInput (paste)="onPaste($event)" />
+          <input id="code4" formControlName="code4" type="text" maxlength="1" #codeInput (paste)="onPaste($event)" />
+          <input id="code5" formControlName="code5" type="text" maxlength="1" #codeInput (paste)="onPaste($event)" />
+          <input id="code6" formControlName="code6" type="text" maxlength="1" #codeInput (paste)="onPaste($event)" />
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="twoFactorForm.invalid">Validar Código</button>
+
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+      <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+    </form>
+  </div>
+</div>

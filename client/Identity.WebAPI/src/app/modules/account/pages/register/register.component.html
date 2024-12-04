@@ -1,0 +1,40 @@
+<div class="auth-container">
+    <div class="auth-form">
+      <h2>Cadastro</h2>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input formControlName="nome" type="text" id="name" placeholder="Digite seu nome" required />
+        </div>
+        
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input formControlName="email" type="email" id="email" placeholder="Digite seu e-mail" required />
+        </div>
+
+        <div class="form-group">
+          <label for="telefone">Telefone</label>
+          <input formControlName="telefone" type="phone" id="phone" placeholder="Digite seu telefone" required />
+        </div>
+  
+        <div>
+          <label for="birthDate">Birth Date</label>
+          <input id="birthDate" formControlName="dataNascimento" type="date">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Senha</label>
+          <input formControlName="password" type="password" id="password" placeholder="Digite sua senha" required />
+        </div>
+  
+        <div class="form-group">
+          <label for="confirm-password">Confirmar Senha</label>
+          <input formControlName="confirmPassword" type="password" id="confirm-password" placeholder="Confirme sua senha" required />
+        </div>
+  
+        <button type="submit" class="btn-submit">Cadastrar</button>
+      </form>
+      <p class="login-link">Já tem uma conta? <a routerLink="/account/login">Faça login</a></p>
+    </div>
+  </div>
+  

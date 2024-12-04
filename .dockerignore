@@ -1,44 +1,30 @@
-# Ignore bin and obj folders
-bin/
-obj/
-
-# Ignore Visual Studio and Rider folders
-.vs/
-.idea/
-.vscode/
-
-# Ignore Dockerfile and docker-compose files (se não forem necessários)
-Dockerfile
-docker-compose.yml
-
-# Ignore app settings files (se não quiser incluir configurações sensíveis no Docker)
-appsettings.Development.json
-appsettings.json
-appsettings.*.json
-
-# Ignore arquivos de pacotes NuGet
-.nuget/
-
-# Ignore pastas temporárias e cache
-.tmp/
-.cache/
-.history/
-
-# Ignore arquivos de log
-*.log
-
-# Ignore arquivos de publicação (build outputs)
-publish/
-
-# Ignore arquivos de usuário do Visual Studio
-*.user
-*.suo
-*.userosscache
-*.sln.docstates
-
-# Ignore pasta de backups (caso tenha algum tipo de backup no projeto)
-backup/
-
-# Ignore arquivos específicos do ASP.NET Core Identity (se forem gerados automaticamente)
-*.db
-Identity.API\.vs\
+**/.classpath
+**/.dockerignore
+**/.env
+**/.git
+**/.gitignore
+**/.project
+**/.settings
+**/.toolstarget
+**/.vs
+**/.vscode
+**/*.*proj.user
+**/*.dbmdl
+**/*.jfm
+**/azds.yaml
+**/bin
+**/charts
+**/docker-compose*
+**/Dockerfile*
+**/node_modules
+**/npm-debug.log
+**/obj
+**/secrets.dev.yaml
+**/values.dev.yaml
+LICENSE
+README.md
+!**/.gitignore
+!.git/HEAD
+!.git/config
+!.git/packed-refs
+!.git/refs/heads/**
