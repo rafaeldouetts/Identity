@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documentos atualizado em 2023\\identity2\\Identity\\server\\Identity.webapi\\Identity.webapi.csproj": {}
+    "C:\\Users\\Rafa\\OneDrive\\Documentos\\projetos\\Identity\\server\\Identity.webapi\\Identity.webapi.csproj": {}
   },
   "projects": {
-    "D:\\Documentos atualizado em 2023\\identity2\\Identity\\server\\Identity.Blob\\Identity.Blob.csproj": {
+    "C:\\Users\\Rafa\\OneDrive\\Documentos\\projetos\\Identity\\server\\Identity.Blob\\Identity.Blob.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documentos atualizado em 2023\\identity2\\Identity\\server\\Identity.Blob\\Identity.Blob.csproj",
+        "projectUniqueName": "C:\\Users\\Rafa\\OneDrive\\Documentos\\projetos\\Identity\\server\\Identity.Blob\\Identity.Blob.csproj",
         "projectName": "Identity.Blob",
-        "projectPath": "D:\\Documentos atualizado em 2023\\identity2\\Identity\\server\\Identity.Blob\\Identity.Blob.csproj",
-        "packagesPath": "C:\\Users\\r_san\\.nuget\\packages\\",
-        "outputPath": "D:\\Documentos atualizado em 2023\\identity2\\Identity\\server\\Identity.Blob\\obj\\",
+        "projectPath": "C:\\Users\\Rafa\\OneDrive\\Documentos\\projetos\\Identity\\server\\Identity.Blob\\Identity.Blob.csproj",
+        "packagesPath": "C:\\Users\\Rafa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rafa\\OneDrive\\Documentos\\projetos\\Identity\\server\\Identity.Blob\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\r_san\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Rafa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +43,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -79,25 +79,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Documentos atualizado em 2023\\identity2\\Identity\\server\\Identity.domain\\Identity.Domain.csproj": {
+    "C:\\Users\\Rafa\\OneDrive\\Documentos\\projetos\\Identity\\server\\Identity.domain\\Identity.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documentos atualizado em 2023\\identity2\\Identity\\server\\Identity.domain\\Identity.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Rafa\\OneDrive\\Documentos\\projetos\\Identity\\server\\Identity.domain\\Identity.Domain.csproj",
         "projectName": "Identity.Domain",
-        "projectPath": "D:\\Documentos atualizado em 2023\\identity2\\Identity\\server\\Identity.domain\\Identity.Domain.csproj",
-        "packagesPath": "C:\\Users\\r_san\\.nuget\\packages\\",
-        "outputPath": "D:\\Documentos atualizado em 2023\\identity2\\Identity\\server\\Identity.domain\\obj\\",
+        "projectPath": "C:\\Users\\Rafa\\OneDrive\\Documentos\\projetos\\Identity\\server\\Identity.domain\\Identity.Domain.csproj",
+        "packagesPath": "C:\\Users\\Rafa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rafa\\OneDrive\\Documentos\\projetos\\Identity\\server\\Identity.domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\r_san\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Rafa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -112,8 +111,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Documentos atualizado em 2023\\identity2\\Identity\\server\\Identity.Infra\\Identity.Infra.csproj": {
-                "projectPath": "D:\\Documentos atualizado em 2023\\identity2\\Identity\\server\\Identity.Infra\\Identity.Infra.csproj"
+              "C:\\Users\\Rafa\\OneDrive\\Documentos\\projetos\\Identity\\server\\Identity.Infra\\Identity.Infra.csproj": {
+                "projectPath": "C:\\Users\\Rafa\\OneDrive\\Documentos\\projetos\\Identity\\server\\Identity.Infra\\Identity.Infra.csproj"
               }
             }
           }
@@ -127,7 +126,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -154,25 +154,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Documentos atualizado em 2023\\identity2\\Identity\\server\\Identity.Infra\\Identity.Infra.csproj": {
+    "C:\\Users\\Rafa\\OneDrive\\Documentos\\projetos\\Identity\\server\\Identity.Infra\\Identity.Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documentos atualizado em 2023\\identity2\\Identity\\server\\Identity.Infra\\Identity.Infra.csproj",
+        "projectUniqueName": "C:\\Users\\Rafa\\OneDrive\\Documentos\\projetos\\Identity\\server\\Identity.Infra\\Identity.Infra.csproj",
         "projectName": "Identity.Infra",
-        "projectPath": "D:\\Documentos atualizado em 2023\\identity2\\Identity\\server\\Identity.Infra\\Identity.Infra.csproj",
-        "packagesPath": "C:\\Users\\r_san\\.nuget\\packages\\",
-        "outputPath": "D:\\Documentos atualizado em 2023\\identity2\\Identity\\server\\Identity.Infra\\obj\\",
+        "projectPath": "C:\\Users\\Rafa\\OneDrive\\Documentos\\projetos\\Identity\\server\\Identity.Infra\\Identity.Infra.csproj",
+        "packagesPath": "C:\\Users\\Rafa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rafa\\OneDrive\\Documentos\\projetos\\Identity\\server\\Identity.Infra\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\r_san\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Rafa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -198,7 +197,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -233,25 +233,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Documentos atualizado em 2023\\identity2\\Identity\\server\\Identity.webapi\\Identity.webapi.csproj": {
+    "C:\\Users\\Rafa\\OneDrive\\Documentos\\projetos\\Identity\\server\\Identity.webapi\\Identity.webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documentos atualizado em 2023\\identity2\\Identity\\server\\Identity.webapi\\Identity.webapi.csproj",
+        "projectUniqueName": "C:\\Users\\Rafa\\OneDrive\\Documentos\\projetos\\Identity\\server\\Identity.webapi\\Identity.webapi.csproj",
         "projectName": "Identity.webapi",
-        "projectPath": "D:\\Documentos atualizado em 2023\\identity2\\Identity\\server\\Identity.webapi\\Identity.webapi.csproj",
-        "packagesPath": "C:\\Users\\r_san\\.nuget\\packages\\",
-        "outputPath": "D:\\Documentos atualizado em 2023\\identity2\\Identity\\server\\Identity.webapi\\obj\\",
+        "projectPath": "C:\\Users\\Rafa\\OneDrive\\Documentos\\projetos\\Identity\\server\\Identity.webapi\\Identity.webapi.csproj",
+        "packagesPath": "C:\\Users\\Rafa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rafa\\OneDrive\\Documentos\\projetos\\Identity\\server\\Identity.webapi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\r_san\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Rafa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -266,14 +265,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Documentos atualizado em 2023\\identity2\\Identity\\server\\Identity.Blob\\Identity.Blob.csproj": {
-                "projectPath": "D:\\Documentos atualizado em 2023\\identity2\\Identity\\server\\Identity.Blob\\Identity.Blob.csproj"
+              "C:\\Users\\Rafa\\OneDrive\\Documentos\\projetos\\Identity\\server\\Identity.Blob\\Identity.Blob.csproj": {
+                "projectPath": "C:\\Users\\Rafa\\OneDrive\\Documentos\\projetos\\Identity\\server\\Identity.Blob\\Identity.Blob.csproj"
               },
-              "D:\\Documentos atualizado em 2023\\identity2\\Identity\\server\\Identity.domain\\Identity.Domain.csproj": {
-                "projectPath": "D:\\Documentos atualizado em 2023\\identity2\\Identity\\server\\Identity.domain\\Identity.Domain.csproj"
+              "C:\\Users\\Rafa\\OneDrive\\Documentos\\projetos\\Identity\\server\\Identity.domain\\Identity.Domain.csproj": {
+                "projectPath": "C:\\Users\\Rafa\\OneDrive\\Documentos\\projetos\\Identity\\server\\Identity.domain\\Identity.Domain.csproj"
               },
-              "D:\\Documentos atualizado em 2023\\identity2\\Identity\\server\\Identity.Infra\\Identity.Infra.csproj": {
-                "projectPath": "D:\\Documentos atualizado em 2023\\identity2\\Identity\\server\\Identity.Infra\\Identity.Infra.csproj"
+              "C:\\Users\\Rafa\\OneDrive\\Documentos\\projetos\\Identity\\server\\Identity.Infra\\Identity.Infra.csproj": {
+                "projectPath": "C:\\Users\\Rafa\\OneDrive\\Documentos\\projetos\\Identity\\server\\Identity.Infra\\Identity.Infra.csproj"
               }
             }
           }
@@ -287,7 +286,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -343,7 +343,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

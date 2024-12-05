@@ -10,3 +10,16 @@ D:\Documentos atualizado em 2023\identity2\Identity\server\Identity.Blob\obj\Deb
 D:\Documentos atualizado em 2023\identity2\Identity\server\Identity.Blob\obj\Debug\net8.0\refint\Identity.Blob.dll
 D:\Documentos atualizado em 2023\identity2\Identity\server\Identity.Blob\obj\Debug\net8.0\Identity.Blob.pdb
 D:\Documentos atualizado em 2023\identity2\Identity\server\Identity.Blob\obj\Debug\net8.0\ref\Identity.Blob.dll
+C:\Users\Rafa\OneDrive\Documentos\projetos\Identity\server\Identity.Blob\bin\Debug\net8.0\Identity.Blob.deps.json
+C:\Users\Rafa\OneDrive\Documentos\projetos\Identity\server\Identity.Blob\bin\Debug\net8.0\Identity.Blob.dll
+C:\Users\Rafa\OneDrive\Documentos\projetos\Identity\server\Identity.Blob\bin\Debug\net8.0\Identity.Blob.pdb
+C:\Users\Rafa\OneDrive\Documentos\projetos\Identity\server\Identity.Blob\obj\Debug\net8.0\Identity.Blob.csproj.AssemblyReference.cache
+C:\Users\Rafa\OneDrive\Documentos\projetos\Identity\server\Identity.Blob\obj\Debug\net8.0\Identity.Blob.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rafa\OneDrive\Documentos\projetos\Identity\server\Identity.Blob\obj\Debug\net8.0\Identity.Blob.AssemblyInfoInputs.cache
+C:\Users\Rafa\OneDrive\Documentos\projetos\Identity\server\Identity.Blob\obj\Debug\net8.0\Identity.Blob.AssemblyInfo.cs
+C:\Users\Rafa\OneDrive\Documentos\projetos\Identity\server\Identity.Blob\obj\Debug\net8.0\Identity.Blob.csproj.CoreCompileInputs.cache
+C:\Users\Rafa\OneDrive\Documentos\projetos\Identity\server\Identity.Blob\obj\Debug\net8.0\Identity.Blob.sourcelink.json
+C:\Users\Rafa\OneDrive\Documentos\projetos\Identity\server\Identity.Blob\obj\Debug\net8.0\Identity.Blob.dll
+C:\Users\Rafa\OneDrive\Documentos\projetos\Identity\server\Identity.Blob\obj\Debug\net8.0\refint\Identity.Blob.dll
+C:\Users\Rafa\OneDrive\Documentos\projetos\Identity\server\Identity.Blob\obj\Debug\net8.0\Identity.Blob.pdb
+C:\Users\Rafa\OneDrive\Documentos\projetos\Identity\server\Identity.Blob\obj\Debug\net8.0\ref\Identity.Blob.dll

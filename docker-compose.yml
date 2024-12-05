@@ -1,6 +1,4 @@
 # # senha padrao do seleniumhub é :secret
-version: '3.8'
-
 services:
   database:
     image: mcr.microsoft.com/mssql/server:2019-latest

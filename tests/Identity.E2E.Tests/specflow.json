@@ -1,0 +1,11 @@
+{
+    "language": "pt-BR",
+    "runtime": {
+        "plugin": [
+            {
+                "name": "SpecFlow.LivingDocPlugin",
+                "version": "3.0.0"
+            }
+        ]
+    }
+}

@@ -1,0 +1,85 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Identity.SpecFlow.Tests.PageModel.Base;
+using Identity.SpecFlow.Tests.PageModel.Base.Identity.SpecFlow.Tests.PageModel.Base;
+using OpenQA.Selenium;
+
+namespace Identity.SpecFlow.Tests.PageModel
+{
+    public class RegisterPageModel : BasePageModel
+    {
+        // Elementos da página
+        private readonly By nomeField = By.Id("name");
+        private readonly By emailField = By.Id("email");
+        private readonly By telefoneField = By.Id("phone");
+        private readonly By dataNascimentoField = By.Id("birthDate");
+        private readonly By passwordField = By.Id("password");
+        private readonly By confirmPasswordField = By.Id("confirm-password");
+        private readonly By submitButton = By.CssSelector(".btn-submit");
+
+        public void NavigateToRegisterPage()
+        {
+            Driver.Navigate().GoToUrl("http://identity.WebApp/account/register");
+        }
+
+        // Construtor que recebe o driver
+        public RegisterPageModel(IWebDriver driver) : base(driver) { }
+
+        // Preenche o campo de nome
+        public void SetNome(string nome)
+        {
+            Driver.FindElement(nomeField).SendKeys(nome);
+        }
+
+        // Preenche o campo de e-mail
+        public void SetEmail(string email)
+        {
+            Driver.FindElement(emailField).SendKeys(email);
+        }
+
+        // Preenche o campo de telefone
+        public void SetTelefone(string telefone)
+        {
+            Driver.FindElement(telefoneField).SendKeys(telefone);
+        }
+
+        // Preenche o campo de data de nascimento
+        public void SetDataNascimento(string dataNascimento)
+        {
+            Driver.FindElement(dataNascimentoField).SendKeys(dataNascimento);
+        }
+
+        // Preenche o campo de senha
+        public void SetPassword(string password)
+        {
+            Driver.FindElement(passwordField).SendKeys(password);
+        }
+
+        // Preenche o campo de confirmação de senha
+        public void SetConfirmPassword(string confirmPassword)
+        {
+            Driver.FindElement(confirmPasswordField).SendKeys(confirmPassword);
+        }
+
+        // Clica no botão de cadastro
+        public void SubmitForm()
+        {
+            Driver.FindElement(submitButton).Click();
+        }
+
+        // Método para preencher todos os campos e submeter o formulário
+        public void FillAndSubmitForm(string nome, string email, string telefone, string dataNascimento, string password, string confirmPassword)
+        {
+            SetNome(nome);
+            SetEmail(email);
+            SetTelefone(telefone);
+            SetDataNascimento(dataNascimento);
+            SetPassword(password);
+            SetConfirmPassword(confirmPassword);
+            SubmitForm();
+        }
+    }
+}

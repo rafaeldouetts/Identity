@@ -49,18 +49,25 @@ namespace Identity.API.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterModel model)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            var user = new ApplicationUser { UserName = model.Nome, Email = model.Email, FullName = model.Nome, PhoneNumber = model.Telefone };
-            var result = await _userManager.CreateAsync(user, model.Password);
-
-            if (result.Succeeded)
+            try
             {
-                return Ok(new { message = "Usuário registrado com sucesso!" });
-            }
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
 
-            return BadRequest(result.Errors);
+                var user = new ApplicationUser { UserName = model.Nome, Email = model.Email, FullName = model.Nome, PhoneNumber = model.Telefone };
+                var result = await _userManager.CreateAsync(user, model.Password);
+
+                if (result.Succeeded)
+                {
+                    return Ok(new { message = "Usuário registrado com sucesso!" });
+                }
+
+                return BadRequest(result.Errors);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
         }
 
         // 2. Login de usuário
