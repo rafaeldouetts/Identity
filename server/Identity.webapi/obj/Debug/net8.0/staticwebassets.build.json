@@ -1,12 +1,11 @@
 {
   "Version": 1,
-  "Hash": "61+7BAwuHobDw73vmV0ZTbTszWFvnfdz4vn6x72jYNY=",
+  "Hash": "4+o9k4uYAbcGhlngF6jHiSvEL1RYaojmw7RqtFdFrww=",
   "Source": "Identity.webapi",
   "BasePath": "_content/Identity.webapi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": []
 }

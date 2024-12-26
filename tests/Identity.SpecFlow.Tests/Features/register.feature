@@ -1,72 +1,78 @@
-Feature: Registro de usu·rio
+Funcionalidade: Registro de usu√°rio
 
-  Como um usu·rio
-  Eu quero me registrar no sistema
-  Para que eu possa acessar a plataforma
+  Cenario: Registrar um usu√°rio com sucesso
+    Dado que o usuario esta na pagina de cadastro
+    E que o usuario preenche todos os campos corretamente
+    Quando ele envia o formulario de registro
+    Entao ele deve ser registrado com sucesso
 
-  Scenario: Registrar um usu·rio com sucesso
-    Given que o usuario esta na pagina de cadastro
-    And que o usu·rio preenche todos os campos corretamente
-    When ele envia o formul·rio de registro
-    Then ele deve ser registrado com sucesso
+  Cenario: Erro ao tentar registrar com senhas que n√£o coincidem
+    Dado que o usuario esta na pagina de cadastro
+    E que o usuario preenche a senha como "Teste@123" 
+    E a confirma√ß√£o de senha como "Senha321"
+    Entao a confirmacao de senha deve exibir a mensagem "As senhas n√£o coincidem."
 
-  Scenario: Tentar registrar um usu·rio com email inv·lido
-    Given que o usu·rio preenche o campo email com "emailinv·lido"
-    When ele envia o formul·rio de registro
-    Then ele deve ver a mensagem de erro "Email inv·lido."
+  Cenario: Erro ao tentar registrar com e-mail inv√°lido
+    Dado que o usuario esta na pagina de cadastro
+    E que o usuario preenche o e-mail como "usuario_invalido.com"
+    Entao o email deve exibir a mensagem "O email √© invalido."
 
-  Scenario: Tentar registrar um usu·rio sem preencher o email
-    Given que o usu·rio n„o preenche o campo email
-    When ele envia o formul·rio de registro
-    Then ele deve ver a mensagem de erro "O email È obrigatÛrio."
+  Cenario: Erro ao tentar registrar com senha fraca
+    Dado que o usuario esta na pagina de cadastro
+    E que o usuario preenche a senha como "senha"
+    Entao a senha deve exibir a mensagem "A senha deve ter no m√≠nimo 8 caracteres."
 
-  Scenario: Tentar registrar um usu·rio com senha curta
-    Given que o usu·rio preenche a senha com "12345"
-    When ele envia o formul·rio de registro
-    Then ele deve ver a mensagem de erro "A senha deve ter no mÌnimo 8 caracteres."
+  Cenario: Erro ao tentar registrar com n√∫mero de telefone inv√°lido
+    Dado que o usuario esta na pagina de cadastro
+    E que o usuario preenche o telefone como "123"
+    Entao o telefone deve exibir a mensagem "O telefone deve ter 10 ou 11 d√≠gitos, incluindo o DDD."
 
-  Scenario: Tentar registrar um usu·rio com senha sem letra mai˙scula
-    Given que o usu·rio preenche a senha com "senha123"
-    When ele envia o formul·rio de registro
-    Then ele deve ver a mensagem de erro "A senha deve conter pelo menos 8 caracteres, incluindo uma letra mai˙scula, uma letra min˙scula, um n˙mero e um sÌmbolo."
+  Cenario: Erro ao tentar registrar sem preencher o campo nome
+    Dado que o usuario esta na pagina de cadastro
+    E que o usuario deixa o campo nome vazio
+    Entao o nome deve exibir a mensagem "O nome √© obrigat√≥rio."
 
-  Scenario: Tentar registrar um usu·rio com senha sem sÌmbolo
-    Given que o usu·rio preenche a senha com "Senha123"
-    When ele envia o formul·rio de registro
-    Then ele deve ver a mensagem de erro "A senha deve conter pelo menos 8 caracteres, incluindo uma letra mai˙scula, uma letra min˙scula, um n˙mero e um sÌmbolo."
+  Cenario: Erro ao tentar registrar sem preencher o campo e-mail
+    Dado que o usuario esta na pagina de cadastro
+    E que o usuario deixa o campo e-mail vazio
+    Entao o email deve exibir a mensagem "O email √© obrigat√≥rio."
 
-  Scenario: Tentar registrar um usu·rio com senhas n„o coincidentes
-    Given que o usu·rio preenche a senha com "Senha123!"
-    And ele preenche a confirmaÁ„o de senha com "Senha124!"
-    When ele envia o formul·rio de registro
-    Then ele deve ver a mensagem de erro "As senhas n„o coincidem."
+  Cenario: Erro ao tentar registrar sem preencher o campo telefone
+    Dado que o usuario esta na pagina de cadastro
+    E que o usuario deixa o campo telefone vazio
+    Entao o telefone deve exibir a mensagem "O telefone √© obrigat√≥rio."
 
-  Scenario: Tentar registrar um usu·rio sem preencher o telefone
-    Given que o usu·rio n„o preenche o campo telefone
-    When ele envia o formul·rio de registro
-    Then ele deve ver a mensagem de erro "O telefone È obrigatÛrio."
+  Cenario: Erro ao tentar registrar sem preencher o campo data de nascimento
+    Dado que o usuario esta na pagina de cadastro
+    E que o usuario deixa o campo data de nascimento vazio
+    Entao a data de nascimento deve exibir a mensagem "A data de nascimento √© obrigat√≥ria."
 
-  Scenario: Tentar registrar um usu·rio com telefone inv·lido
-    Given que o usu·rio preenche o telefone com "12345"
-    When ele envia o formul·rio de registro
-    Then ele deve ver a mensagem de erro "N˙mero de telefone inv·lido."
+  Cenario: Erro ao tentar registrar sem preencher o campo senha
+    Dado que o usuario esta na pagina de cadastro
+    E que o usuario deixa o campo senha vazio
+    Entao a senha deve exibir a mensagem "A senha √© obrigat√≥ria."
 
-  Scenario: Tentar registrar um usu·rio sem preencher a data de nascimento
-    Given que o usu·rio n„o preenche o campo data de nascimento
-    When ele envia o formul·rio de registro
-    Then ele deve ver a mensagem de erro "A data de nascimento È obrigatÛria."
+  Cenario: Tentar registrar um usu√°rio com senha curta
+    Dado que o usuario esta na pagina de cadastro
+    E que o usu√°rio preenche a senha com "12345"
+    Entao a senha deve exibir a mensagem "A senha deve ter no m√≠nimo 8 caracteres."
 
-  Scenario: Tentar registrar um usu·rio com uma data de nascimento inv·lida
-    Given que o usu·rio preenche a data de nascimento com "32/13/2024"
-    When ele envia o formul·rio de registro
-    Then ele deve ver a mensagem de erro "Data inv·lida."
+  Cenario: Tentar registrar um usu√°rio com senha sem letra mai√∫scula
+    Dado que o usuario esta na pagina de cadastro
+    E que o usu√°rio preenche a senha com "senha1234"
+    Entao a senha deve exibir a mensagem "A senha deve conter pelo menos uma letra mai√∫scula."
 
-  Scenario: Tentar registrar um usu·rio com nome muito curto
-    Given que o usu·rio preenche o nome com "Ana"
-    When ele envia o formul·rio de registro
-    Then ele deve ver a mensagem de erro "O nome deve ter no mÌnimo 8 caracteres."
+  Cenario: Tentar registrar um usu√°rio com senha sem s√≠mbolo
+    Dado que o usuario esta na pagina de cadastro
+    E que o usu√°rio preenche a senha com "Senha1234"
+    Entao a senha deve exibir a mensagem "A senha deve conter pelo menos um s√≠mbolo especial (@, $, !, %, * ou &)."
 
-  Scenario: Tentar registrar um usu·rio sem preencher o nome
-    Given que o usu·rio n„o preenche o campo nome
-    When ele envia o formul·rio de registro
-    Then ele deve ver a mensagem de erro "O telefone È obrigatÛrio."
+  Cenario: Tentar registrar um usu√°rio com uma data de nascimento inv√°lida
+    Dado que o usuario esta na pagina de cadastro
+    E que o usu√°rio preenche a data de nascimento com ""
+    Entao a data de nascimento deve exibir a mensagem "Data inv√°lida."
+
+  Cenario: Tentar registrar um usu√°rio com nome muito curto
+    Dado que o usuario esta na pagina de cadastro
+    E que o usu√°rio preenche o nome com "Ana"
+    Entao o nome deve exibir a mensagem "O nome deve ter no m√≠nimo 8 caracteres."

@@ -1198,7 +1198,14 @@
           "System.Threading": "4.3.0"
         }
       },
-      "System.Formats.Asn1/8.0.1": {},
+      "System.Formats.Asn1/8.0.1": {
+        "runtime": {
+          "lib/net8.0/System.Formats.Asn1.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.724.31311"
+          }
+        }
+      },
       "System.Globalization/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
@@ -1831,10 +1838,7 @@
           "WindowsAzure.Storage": "9.3.3"
         },
         "runtime": {
-          "Identity.Blob.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Identity.Blob.dll": {}
         }
       },
       "Identity.Domain/1.0.0": {
@@ -1843,10 +1847,7 @@
           "StackExchange.Redis": "2.8.16"
         },
         "runtime": {
-          "Identity.Domain.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Identity.Domain.dll": {}
         }
       },
       "Identity.Infra/1.0.0": {
@@ -1856,10 +1857,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.11"
         },
         "runtime": {
-          "Identity.Infra.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Identity.Infra.dll": {}
         }
       }
     }

@@ -1,0 +1,15 @@
+{
+  "specFlow": {
+    "language": {
+      "feature": "pt-BR"
+    },
+    "stepAssemblies": [
+      {
+        "assembly": "Identity.SpecFlow.Tests"
+      }
+    ],
+    "bindingCulture": {
+      "name": "pt-BR"
+    }
+  }
+}

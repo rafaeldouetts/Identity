@@ -21,11 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Features\register.feature.cs">
-      <Visible>true</Visible>
-      <DependentUpon>%(Filename)</DependentUpon>
-      <DesignTime>true</DesignTime>
-      <AutoGen>true</AutoGen>
+    <Compile Update="StepDefinitions\RegistroDeUsuarioStepDefinitions.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
   </ItemGroup>
 

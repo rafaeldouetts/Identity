@@ -1,49 +1,49 @@
 # API de Gerenciamento de Contas
 
-Esta API fornece endpoints para o gerenciamento de contas de usuários, incluindo registro, login, gerenciamento de perfil, autenticação em dois fatores (2FA) e mais.
+Esta API fornece endpoints para o gerenciamento de contas de usuï¿½rios, incluindo registro, login, gerenciamento de perfil, autenticaï¿½ï¿½o em dois fatores (2FA) e mais.
 
 ---
 
 ## Endpoints Principais
 
-### Autenticação e Usuário
-- `POST /api/account/register` - Registro de novo usuário.
-- `POST /api/account/login` - Login do usuário.
-- `POST /api/account/logout` - Logout do usuário.
+### Autenticaï¿½ï¿½o e Usuï¿½rio
+- `POST /api/account/register` - Registro de novo usuï¿½rio.
+- `POST /api/account/login` - Login do usuï¿½rio.
+- `POST /api/account/logout` - Logout do usuï¿½rio.
 - `POST /api/account/change-password` - Troca de senha.
-- `POST /api/account/forgot-password` - Recuperação de senha.
-- `POST /api/account/reset-password` - Redefinição de senha.
-- `PUT /api/account/update-profile` - Atualização de perfil do usuário.
-- `POST /api/account/upload-profile-picture` - Atualização da foto de perfil.
+- `POST /api/account/forgot-password` - Recuperaï¿½ï¿½o de senha.
+- `POST /api/account/reset-password` - Redefiniï¿½ï¿½o de senha.
+- `PUT /api/account/update-profile` - Atualizaï¿½ï¿½o de perfil do usuï¿½rio.
+- `POST /api/account/upload-profile-picture` - Atualizaï¿½ï¿½o da foto de perfil.
 
-### Confirmação e Verificação
-- `POST /api/account/send-email-confirmation` - Envio de token para confirmação de e-mail.
-- `POST /api/account/validate-email-token` - Validação de token de e-mail.
-- `POST /api/account/send-phone-confirmation` - Envio de token para confirmação de telefone.
-- `POST /api/account/validate-phone-token` - Validação de token de telefone.
+### Confirmaï¿½ï¿½o e Verificaï¿½ï¿½o
+- `POST /api/account/send-email-confirmation` - Envio de token para confirmaï¿½ï¿½o de e-mail.
+- `POST /api/account/validate-email-token` - Validaï¿½ï¿½o de token de e-mail.
+- `POST /api/account/send-phone-confirmation` - Envio de token para confirmaï¿½ï¿½o de telefone.
+- `POST /api/account/validate-phone-token` - Validaï¿½ï¿½o de token de telefone.
 
-### Autenticação em Dois Fatores (2FA)
-- `POST /api/account/send-2fa-code` - Envio de código para autenticação em dois fatores.
-- `POST /api/account/validate-2fa-code` - Validação do código de autenticação em dois fatores.
+### Autenticaï¿½ï¿½o em Dois Fatores (2FA)
+- `POST /api/account/send-2fa-code` - Envio de cï¿½digo para autenticaï¿½ï¿½o em dois fatores.
+- `POST /api/account/validate-2fa-code` - Validaï¿½ï¿½o do cï¿½digo de autenticaï¿½ï¿½o em dois fatores.
 
 ---
 
 ## Tecnologias Utilizadas
 
 - **ASP.NET Core**: Desenvolvimento da API.
-- **Identity Framework**: Gerenciamento de autenticação e usuários.
-- **Redis**: Armazenamento temporário de tokens.
+- **Identity Framework**: Gerenciamento de autenticaï¿½ï¿½o e usuï¿½rios.
+- **Redis**: Armazenamento temporï¿½rio de tokens.
 - **Blob Storage**: Upload e armazenamento de arquivos.
-- **2FA (Autenticação em Dois Fatores)**: Implementado via e-mail ou telefone.
+- **2FA (Autenticaï¿½ï¿½o em Dois Fatores)**: Implementado via e-mail ou telefone.
 
 ---
 
-## Configuração
+## Configuraï¿½ï¿½o
 
 1. **Banco de Dados**: Configure o acesso ao banco de dados no `appsettings.json`.
-2. **Redis**: Insira as credenciais para o Redis no arquivo de configuração.
+2. **Redis**: Insira as credenciais para o Redis no arquivo de configuraï¿½ï¿½o.
 3. **Blob Storage**: Configure o acesso para upload de arquivos.
-4. **Serviços Externos**: Configure provedores de e-mail e WhatsApp para notificações.
+4. **Serviï¿½os Externos**: Configure provedores de e-mail e WhatsApp para notificaï¿½ï¿½es.
 
 ---
 
@@ -52,70 +52,96 @@ Esta API fornece endpoints para o gerenciamento de contas de usuários, incluindo
 ### 1. Testes de Unidade
 - **Frameworks utilizados**: 
   - [xUnit](https://xunit.net/) para estruturar os testes.
-  - [FluentAssertions](https://fluentassertions.com/) para criar assertivas legíveis e fluentes.
+  - [FluentAssertions](https://fluentassertions.com/) para criar assertivas legï¿½veis e fluentes.
 - **Objetivo**: 
-  - Garantir que as regras de negócio e os métodos individuais da aplicação funcionem como esperado.
+  - Garantir que as regras de negï¿½cio e os mï¿½todos individuais da aplicaï¿½ï¿½o funcionem como esperado.
 - **Escopo**:
-  - Validação de entrada de dados.
-  - Métodos de utilitários e serviços internos.
+  - Validaï¿½ï¿½o de entrada de dados.
+  - Mï¿½todos de utilitï¿½rios e serviï¿½os internos.
 
-### 2. Testes de Integração
+### 2. Testes de Integraï¿½ï¿½o
 - **Frameworks utilizados**:
-  - [xUnit](https://xunit.net/) para execução dos testes.
+  - [xUnit](https://xunit.net/) para execuï¿½ï¿½o dos testes.
   - [Ductus.FluentDocker](https://github.com/mariotoffia/FluentDocker) para gerenciar containers Docker a partir de um arquivo `docker-compose.yml`.
-  - [HttpClient](https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httpclient) para simular chamadas à API.
+  - [HttpClient](https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httpclient) para simular chamadas ï¿½ API.
 - **Objetivo**:
-  - Verificar a integração entre os componentes principais do sistema, como API, banco de dados e Redis.
+  - Verificar a integraï¿½ï¿½o entre os componentes principais do sistema, como API, banco de dados e Redis.
 - **Processo**:
   - Subir o ambiente de teste (Redis, banco de dados, e API) usando o `docker-compose`.
-  - Executar os testes simulando cenários reais de uso.
+  - Executar os testes simulando cenï¿½rios reais de uso.
 
 ### 3. Testes de Fim a Fim (E2E)
 - **Frameworks utilizados**:
-  - [Selenium WebDriver](https://www.selenium.dev/) para automação dos testes no navegador.
-  - Selenium Hub para executar os testes em múltiplos navegadores.
+  - [Selenium WebDriver](https://www.selenium.dev/) para automaï¿½ï¿½o dos testes no navegador.
+  - Selenium Hub para executar os testes em mï¿½ltiplos navegadores.
 - **Navegadores testados**:
   - Microsoft Edge.
   - Google Chrome.
   - Mozilla Firefox.
 - **Objetivo**:
-  - Validar a experiência completa do usuário na interface da aplicação, verificando se todos os fluxos funcionam conforme esperado.
+  - Validar a experiï¿½ncia completa do usuï¿½rio na interface da aplicaï¿½ï¿½o, verificando se todos os fluxos funcionam conforme esperado.
 - **Processo**:
-  - Configurar o Selenium Hub com os nós para cada navegador.
-  - Executar os testes nos três navegadores.
+  - Configurar o Selenium Hub com os nï¿½s para cada navegador.
+  - Executar os testes nos trï¿½s navegadores.
 
 ---
 
 ## Recursos Adicionais
 
-### Segurança
-- **JWT (JSON Web Token)**: Usado para autenticação e autorização de endpoints.
-- **Criptografia**: Todas as senhas são armazenadas utilizando hashing seguro (ex.: BCrypt).
-- **Políticas de Acesso**: Implementação de roles e permissões para controle granular de acessos.
+### Seguranï¿½a
+- **JWT (JSON Web Token)**: Usado para autenticaï¿½ï¿½o e autorizaï¿½ï¿½o de endpoints.
+- **Criptografia**: Todas as senhas sï¿½o armazenadas utilizando hashing seguro (ex.: BCrypt).
+- **Polï¿½ticas de Acesso**: Implementaï¿½ï¿½o de roles e permissï¿½es para controle granular de acessos.
 
 ### Escalabilidade
-- **Redis**: Para armazenamento temporário e suporte a autenticação em dois fatores.
-- **Blob Storage**: Armazenamento de arquivos de forma escalável.
+- **Redis**: Para armazenamento temporï¿½rio e suporte a autenticaï¿½ï¿½o em dois fatores.
+- **Blob Storage**: Armazenamento de arquivos de forma escalï¿½vel.
 
 ---
 
 ## Como Contribuir
 
-1. Faça um fork deste repositório.
-2. Crie uma branch para suas alterações (`git checkout -b feature/sua-feature`).
-3. Faça commit das alterações (`git commit -m 'Adicionando uma nova feature'`).
+1. Faï¿½a um fork deste repositï¿½rio.
+2. Crie uma branch para suas alteraï¿½ï¿½es (`git checkout -b feature/sua-feature`).
+3. Faï¿½a commit das alteraï¿½ï¿½es (`git commit -m 'Adicionando uma nova feature'`).
 4. Envie um push para sua branch (`git push origin feature/sua-feature`).
-5. Abra um pull request para revisão.
+5. Abra um pull request para revisï¿½o.
 
 ---
 
-## Licença
+## Licenï¿½a
 
-Este projeto é licenciado sob a licença [MIT](LICENSE).
+Este projeto ï¿½ licenciado sob a licenï¿½a [MIT](LICENSE).
 
 ---
 
-## Observação
+## Observaï¿½ï¿½o
 
-Para detalhes técnicos sobre os endpoints, como exemplos de body e respostas, consulte a documentação gerada automaticamente pelo Swagger disponível no `/swagger`.
+Para detalhes tï¿½cnicos sobre os endpoints, como exemplos de body e respostas, consulte a documentaï¿½ï¿½o gerada automaticamente pelo Swagger disponï¿½vel no `/swagger`.
 
+
+para alterar o specflow para portugues e conseguir utilizar as palavras (Dado, Quando, Entao) precisamos configurar o arquivo specflow.json com as seguintes configuracoes 
+{
+  "bindingCulture": {
+    "language": "pt-br"
+  },
+  "language": {
+    "feature": "pt-br"
+  }
+}
+
+
+e para os metodos conseguirem interpretar caracteres especiais dentro das variaveis, precisamos salvar o arquivo como utf8
+
+
+Abra o arquivo .feature no Visual Studio.
+
+VÃ¡ atÃ© o menu Arquivo.
+
+Selecione Salvar Como....
+
+Na janela de salvar, clique na seta para baixo (ao lado do botÃ£o Salvar).
+
+Selecione a opÃ§Ã£o CodificaÃ§Ã£o....
+
+Isso abrirÃ¡ uma janela onde vocÃª poderÃ¡ ver a codificaÃ§Ã£o atual do arquivo. Se estiver usando UTF-8, vocÃª verÃ¡ essa opÃ§Ã£o selecionada. Caso contrÃ¡rio, vocÃª pode alterar a codificaÃ§Ã£o para UTF-8.

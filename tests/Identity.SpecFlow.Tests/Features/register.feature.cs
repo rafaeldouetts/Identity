@@ -19,7 +19,7 @@ namespace Identity.SpecFlow.Tests.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class RegistroDeUsuRioFeature : object, Xunit.IClassFixture<RegistroDeUsuRioFeature.FixtureData>, System.IDisposable
+    public partial class RegistroDeUsuarioFeature : object, Xunit.IClassFixture<RegistroDeUsuarioFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -31,7 +31,7 @@ namespace Identity.SpecFlow.Tests.Features
 #line 1 "register.feature"
 #line hidden
         
-        public RegistroDeUsuRioFeature(RegistroDeUsuRioFeature.FixtureData fixtureData, Identity_SpecFlow_Tests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public RegistroDeUsuarioFeature(RegistroDeUsuarioFeature.FixtureData fixtureData, Identity_SpecFlow_Tests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,8 +40,7 @@ namespace Identity.SpecFlow.Tests.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Registro de usu�rio", "  Como um usu�rio\r\n  Eu quero me registrar no sistema\r\n  Para que eu possa acessa" +
-                    "r a plataforma", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("pt-BR"), "Features", "Registro de usuário", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -81,15 +80,15 @@ namespace Identity.SpecFlow.Tests.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Registrar um usu�rio com sucesso")]
-        [Xunit.TraitAttribute("FeatureTitle", "Registro de usu�rio")]
-        [Xunit.TraitAttribute("Description", "Registrar um usu�rio com sucesso")]
-        public virtual void RegistrarUmUsuRioComSucesso()
+        [Xunit.SkippableFactAttribute(DisplayName="Registrar um usuário com sucesso")]
+        [Xunit.TraitAttribute("FeatureTitle", "Registro de usuário")]
+        [Xunit.TraitAttribute("Description", "Registrar um usuário com sucesso")]
+        public virtual void RegistrarUmUsuarioComSucesso()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Registrar um usu�rio com sucesso", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 7
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Registrar um usuário com sucesso", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 3
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -109,238 +108,240 @@ namespace Identity.SpecFlow.Tests.Features
             else
             {
                 this.ScenarioStart();
-#line 8
-    testRunner.Given("que o usuario esta na pagina de cadastro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 4
+    testRunner.Given("que o usuario esta na pagina de cadastro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line hidden
+#line 5
+    testRunner.And("que o usuario preenche todos os campos corretamente", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line hidden
+#line 6
+    testRunner.When("ele envia o formulario de registro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+#line hidden
+#line 7
+    testRunner.Then("ele deve ser registrado com sucesso", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Erro ao tentar registrar com senhas que não coincidem")]
+        [Xunit.TraitAttribute("FeatureTitle", "Registro de usuário")]
+        [Xunit.TraitAttribute("Description", "Erro ao tentar registrar com senhas que não coincidem")]
+        public virtual void ErroAoTentarRegistrarComSenhasQueNaoCoincidem()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Erro ao tentar registrar com senhas que não coincidem", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 9
-    testRunner.And("que o usu�rio preenche todos os campos corretamente", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  this.ScenarioInitialize(scenarioInfo);
 #line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
 #line 10
-    testRunner.When("ele envia o formul�rio de registro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("que o usuario esta na pagina de cadastro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line hidden
 #line 11
-    testRunner.Then("ele deve ser registrado com sucesso", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.And("que o usuario preenche a senha como \"Teste@123\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
 #line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [Xunit.SkippableFactAttribute(DisplayName="Tentar registrar um usu�rio com email inv�lido")]
-        [Xunit.TraitAttribute("FeatureTitle", "Registro de usu�rio")]
-        [Xunit.TraitAttribute("Description", "Tentar registrar um usu�rio com email inv�lido")]
-        public virtual void TentarRegistrarUmUsuRioComEmailInvLido()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Tentar registrar um usu�rio com email inv�lido", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 12
+    testRunner.And("a confirmação de senha como \"Senha321\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line hidden
 #line 13
-  this.ScenarioInitialize(scenarioInfo);
+    testRunner.Then("a confirmacao de senha deve exibir a mensagem \"As senhas não coincidem.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
             }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 14
-    testRunner.Given("que o usu�rio preenche o campo email com \"emailinv�lido\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Erro ao tentar registrar com e-mail inválido")]
+        [Xunit.TraitAttribute("FeatureTitle", "Registro de usuário")]
+        [Xunit.TraitAttribute("Description", "Erro ao tentar registrar com e-mail inválido")]
+        public virtual void ErroAoTentarRegistrarComE_MailInvalido()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Erro ao tentar registrar com e-mail inválido", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 15
-    testRunner.When("ele envia o formul�rio de registro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  this.ScenarioInitialize(scenarioInfo);
 #line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
 #line 16
-    testRunner.Then("ele deve ver a mensagem de erro \"Email inv�lido.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Given("que o usuario esta na pagina de cadastro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [Xunit.SkippableFactAttribute(DisplayName="Tentar registrar um usu�rio sem preencher o email")]
-        [Xunit.TraitAttribute("FeatureTitle", "Registro de usu�rio")]
-        [Xunit.TraitAttribute("Description", "Tentar registrar um usu�rio sem preencher o email")]
-        public virtual void TentarRegistrarUmUsuRioSemPreencherOEmail()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Tentar registrar um usu�rio sem preencher o email", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 17
+    testRunner.And("que o usuario preenche o e-mail como \"usuario_invalido.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line hidden
 #line 18
-  this.ScenarioInitialize(scenarioInfo);
+    testRunner.Then("o email deve exibir a mensagem \"O email é invalido.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
             }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 19
-    testRunner.Given("que o usu�rio n�o preenche o campo email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Erro ao tentar registrar com senha fraca")]
+        [Xunit.TraitAttribute("FeatureTitle", "Registro de usuário")]
+        [Xunit.TraitAttribute("Description", "Erro ao tentar registrar com senha fraca")]
+        public virtual void ErroAoTentarRegistrarComSenhaFraca()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Erro ao tentar registrar com senha fraca", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 20
-    testRunner.When("ele envia o formul�rio de registro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  this.ScenarioInitialize(scenarioInfo);
 #line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
 #line 21
-    testRunner.Then("ele deve ver a mensagem de erro \"O email � obrigat�rio.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Given("que o usuario esta na pagina de cadastro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [Xunit.SkippableFactAttribute(DisplayName="Tentar registrar um usu�rio com senha curta")]
-        [Xunit.TraitAttribute("FeatureTitle", "Registro de usu�rio")]
-        [Xunit.TraitAttribute("Description", "Tentar registrar um usu�rio com senha curta")]
-        public virtual void TentarRegistrarUmUsuRioComSenhaCurta()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Tentar registrar um usu�rio com senha curta", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 22
+    testRunner.And("que o usuario preenche a senha como \"senha\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line hidden
 #line 23
-  this.ScenarioInitialize(scenarioInfo);
+    testRunner.Then("a senha deve exibir a mensagem \"A senha deve ter no mínimo 8 caracteres.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
             }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 24
-    testRunner.Given("que o usu�rio preenche a senha com \"12345\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Erro ao tentar registrar com número de telefone inválido")]
+        [Xunit.TraitAttribute("FeatureTitle", "Registro de usuário")]
+        [Xunit.TraitAttribute("Description", "Erro ao tentar registrar com número de telefone inválido")]
+        public virtual void ErroAoTentarRegistrarComNumeroDeTelefoneInvalido()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Erro ao tentar registrar com número de telefone inválido", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 25
-    testRunner.When("ele envia o formul�rio de registro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  this.ScenarioInitialize(scenarioInfo);
 #line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
 #line 26
-    testRunner.Then("ele deve ver a mensagem de erro \"A senha deve ter no m�nimo 8 caracteres.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Given("que o usuario esta na pagina de cadastro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [Xunit.SkippableFactAttribute(DisplayName="Tentar registrar um usu�rio com senha sem letra mai�scula")]
-        [Xunit.TraitAttribute("FeatureTitle", "Registro de usu�rio")]
-        [Xunit.TraitAttribute("Description", "Tentar registrar um usu�rio com senha sem letra mai�scula")]
-        public virtual void TentarRegistrarUmUsuRioComSenhaSemLetraMaiScula()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Tentar registrar um usu�rio com senha sem letra mai�scula", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 27
+    testRunner.And("que o usuario preenche o telefone como \"123\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line hidden
 #line 28
-  this.ScenarioInitialize(scenarioInfo);
+    testRunner.Then("o telefone deve exibir a mensagem \"O telefone deve ter 10 ou 11 dígitos, incluind" +
+                        "o o DDD.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
             }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 29
-    testRunner.Given("que o usu�rio preenche a senha com \"senha123\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Erro ao tentar registrar sem preencher o campo nome")]
+        [Xunit.TraitAttribute("FeatureTitle", "Registro de usuário")]
+        [Xunit.TraitAttribute("Description", "Erro ao tentar registrar sem preencher o campo nome")]
+        public virtual void ErroAoTentarRegistrarSemPreencherOCampoNome()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Erro ao tentar registrar sem preencher o campo nome", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 30
-    testRunner.When("ele envia o formul�rio de registro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  this.ScenarioInitialize(scenarioInfo);
 #line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
 #line 31
-    testRunner.Then("ele deve ver a mensagem de erro \"A senha deve conter pelo menos 8 caracteres, inc" +
-                        "luindo uma letra mai�scula, uma letra min�scula, um n�mero e um s�mbolo.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Given("que o usuario esta na pagina de cadastro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [Xunit.SkippableFactAttribute(DisplayName="Tentar registrar um usu�rio com senha sem s�mbolo")]
-        [Xunit.TraitAttribute("FeatureTitle", "Registro de usu�rio")]
-        [Xunit.TraitAttribute("Description", "Tentar registrar um usu�rio com senha sem s�mbolo")]
-        public virtual void TentarRegistrarUmUsuRioComSenhaSemSMbolo()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Tentar registrar um usu�rio com senha sem s�mbolo", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 32
+    testRunner.And("que o usuario deixa o campo nome vazio", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line hidden
 #line 33
-  this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 34
-    testRunner.Given("que o usu�rio preenche a senha com \"Senha123\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 35
-    testRunner.When("ele envia o formul�rio de registro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 36
-    testRunner.Then("ele deve ver a mensagem de erro \"A senha deve conter pelo menos 8 caracteres, inc" +
-                        "luindo uma letra mai�scula, uma letra min�scula, um n�mero e um s�mbolo.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Then("o nome deve exibir a mensagem \"O nome é obrigatório.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Tentar registrar um usu�rio com senhas n�o coincidentes")]
-        [Xunit.TraitAttribute("FeatureTitle", "Registro de usu�rio")]
-        [Xunit.TraitAttribute("Description", "Tentar registrar um usu�rio com senhas n�o coincidentes")]
-        public virtual void TentarRegistrarUmUsuRioComSenhasNOCoincidentes()
+        [Xunit.SkippableFactAttribute(DisplayName="Erro ao tentar registrar sem preencher o campo e-mail")]
+        [Xunit.TraitAttribute("FeatureTitle", "Registro de usuário")]
+        [Xunit.TraitAttribute("Description", "Erro ao tentar registrar sem preencher o campo e-mail")]
+        public virtual void ErroAoTentarRegistrarSemPreencherOCampoE_Mail()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Tentar registrar um usu�rio com senhas n�o coincidentes", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 38
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Erro ao tentar registrar sem preencher o campo e-mail", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 35
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -360,31 +361,69 @@ namespace Identity.SpecFlow.Tests.Features
             else
             {
                 this.ScenarioStart();
-#line 39
-    testRunner.Given("que o usu�rio preenche a senha com \"Senha123!\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 36
+    testRunner.Given("que o usuario esta na pagina de cadastro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line hidden
+#line 37
+    testRunner.And("que o usuario deixa o campo e-mail vazio", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line hidden
+#line 38
+    testRunner.Then("o email deve exibir a mensagem \"O email é obrigatório.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Erro ao tentar registrar sem preencher o campo telefone")]
+        [Xunit.TraitAttribute("FeatureTitle", "Registro de usuário")]
+        [Xunit.TraitAttribute("Description", "Erro ao tentar registrar sem preencher o campo telefone")]
+        public virtual void ErroAoTentarRegistrarSemPreencherOCampoTelefone()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Erro ao tentar registrar sem preencher o campo telefone", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 40
-    testRunner.And("ele preenche a confirma��o de senha com \"Senha124!\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  this.ScenarioInitialize(scenarioInfo);
 #line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
 #line 41
-    testRunner.When("ele envia o formul�rio de registro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("que o usuario esta na pagina de cadastro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line hidden
 #line 42
-    testRunner.Then("ele deve ver a mensagem de erro \"As senhas n�o coincidem.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.And("que o usuario deixa o campo telefone vazio", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line hidden
+#line 43
+    testRunner.Then("o telefone deve exibir a mensagem \"O telefone é obrigatório.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Tentar registrar um usu�rio sem preencher o telefone")]
-        [Xunit.TraitAttribute("FeatureTitle", "Registro de usu�rio")]
-        [Xunit.TraitAttribute("Description", "Tentar registrar um usu�rio sem preencher o telefone")]
-        public virtual void TentarRegistrarUmUsuRioSemPreencherOTelefone()
+        [Xunit.SkippableFactAttribute(DisplayName="Erro ao tentar registrar sem preencher o campo data de nascimento")]
+        [Xunit.TraitAttribute("FeatureTitle", "Registro de usuário")]
+        [Xunit.TraitAttribute("Description", "Erro ao tentar registrar sem preencher o campo data de nascimento")]
+        public virtual void ErroAoTentarRegistrarSemPreencherOCampoDataDeNascimento()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Tentar registrar um usu�rio sem preencher o telefone", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 44
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Erro ao tentar registrar sem preencher o campo data de nascimento", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 45
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -404,28 +443,29 @@ namespace Identity.SpecFlow.Tests.Features
             else
             {
                 this.ScenarioStart();
-#line 45
-    testRunner.Given("que o usu�rio n�o preenche o campo telefone", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
 #line 46
-    testRunner.When("ele envia o formul�rio de registro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("que o usuario esta na pagina de cadastro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line hidden
 #line 47
-    testRunner.Then("ele deve ver a mensagem de erro \"O telefone � obrigat�rio.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.And("que o usuario deixa o campo data de nascimento vazio", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line hidden
+#line 48
+    testRunner.Then("a data de nascimento deve exibir a mensagem \"A data de nascimento é obrigatória.\"" +
+                        "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Tentar registrar um usu�rio com telefone inv�lido")]
-        [Xunit.TraitAttribute("FeatureTitle", "Registro de usu�rio")]
-        [Xunit.TraitAttribute("Description", "Tentar registrar um usu�rio com telefone inv�lido")]
-        public virtual void TentarRegistrarUmUsuRioComTelefoneInvLido()
+        [Xunit.SkippableFactAttribute(DisplayName="Erro ao tentar registrar sem preencher o campo senha")]
+        [Xunit.TraitAttribute("FeatureTitle", "Registro de usuário")]
+        [Xunit.TraitAttribute("Description", "Erro ao tentar registrar sem preencher o campo senha")]
+        public virtual void ErroAoTentarRegistrarSemPreencherOCampoSenha()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Tentar registrar um usu�rio com telefone inv�lido", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 49
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Erro ao tentar registrar sem preencher o campo senha", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 50
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -445,28 +485,28 @@ namespace Identity.SpecFlow.Tests.Features
             else
             {
                 this.ScenarioStart();
-#line 50
-    testRunner.Given("que o usu�rio preenche o telefone com \"12345\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
 #line 51
-    testRunner.When("ele envia o formul�rio de registro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("que o usuario esta na pagina de cadastro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line hidden
 #line 52
-    testRunner.Then("ele deve ver a mensagem de erro \"N�mero de telefone inv�lido.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.And("que o usuario deixa o campo senha vazio", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line hidden
+#line 53
+    testRunner.Then("a senha deve exibir a mensagem \"A senha é obrigatória.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Tentar registrar um usu�rio sem preencher a data de nascimento")]
-        [Xunit.TraitAttribute("FeatureTitle", "Registro de usu�rio")]
-        [Xunit.TraitAttribute("Description", "Tentar registrar um usu�rio sem preencher a data de nascimento")]
-        public virtual void TentarRegistrarUmUsuRioSemPreencherADataDeNascimento()
+        [Xunit.SkippableFactAttribute(DisplayName="Tentar registrar um usuário com senha curta")]
+        [Xunit.TraitAttribute("FeatureTitle", "Registro de usuário")]
+        [Xunit.TraitAttribute("Description", "Tentar registrar um usuário com senha curta")]
+        public virtual void TentarRegistrarUmUsuarioComSenhaCurta()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Tentar registrar um usu�rio sem preencher a data de nascimento", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 54
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Tentar registrar um usuário com senha curta", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 55
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -486,28 +526,28 @@ namespace Identity.SpecFlow.Tests.Features
             else
             {
                 this.ScenarioStart();
-#line 55
-    testRunner.Given("que o usu�rio n�o preenche o campo data de nascimento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
 #line 56
-    testRunner.When("ele envia o formul�rio de registro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("que o usuario esta na pagina de cadastro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line hidden
 #line 57
-    testRunner.Then("ele deve ver a mensagem de erro \"A data de nascimento � obrigat�ria.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.And("que o usuário preenche a senha com \"12345\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line hidden
+#line 58
+    testRunner.Then("a senha deve exibir a mensagem \"A senha deve ter no mínimo 8 caracteres.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Tentar registrar um usu�rio com uma data de nascimento inv�lida")]
-        [Xunit.TraitAttribute("FeatureTitle", "Registro de usu�rio")]
-        [Xunit.TraitAttribute("Description", "Tentar registrar um usu�rio com uma data de nascimento inv�lida")]
-        public virtual void TentarRegistrarUmUsuRioComUmaDataDeNascimentoInvLida()
+        [Xunit.SkippableFactAttribute(DisplayName="Tentar registrar um usuário com senha sem letra maiúscula")]
+        [Xunit.TraitAttribute("FeatureTitle", "Registro de usuário")]
+        [Xunit.TraitAttribute("Description", "Tentar registrar um usuário com senha sem letra maiúscula")]
+        public virtual void TentarRegistrarUmUsuarioComSenhaSemLetraMaiuscula()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Tentar registrar um usu�rio com uma data de nascimento inv�lida", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 59
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Tentar registrar um usuário com senha sem letra maiúscula", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 60
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -527,28 +567,29 @@ namespace Identity.SpecFlow.Tests.Features
             else
             {
                 this.ScenarioStart();
-#line 60
-    testRunner.Given("que o usu�rio preenche a data de nascimento com \"32/13/2024\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
 #line 61
-    testRunner.When("ele envia o formul�rio de registro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("que o usuario esta na pagina de cadastro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line hidden
 #line 62
-    testRunner.Then("ele deve ver a mensagem de erro \"Data inv�lida.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.And("que o usuário preenche a senha com \"senha1234\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line hidden
+#line 63
+    testRunner.Then("a senha deve exibir a mensagem \"A senha deve conter pelo menos uma letra maiúscul" +
+                        "a.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Tentar registrar um usu�rio com nome muito curto")]
-        [Xunit.TraitAttribute("FeatureTitle", "Registro de usu�rio")]
-        [Xunit.TraitAttribute("Description", "Tentar registrar um usu�rio com nome muito curto")]
-        public virtual void TentarRegistrarUmUsuRioComNomeMuitoCurto()
+        [Xunit.SkippableFactAttribute(DisplayName="Tentar registrar um usuário com senha sem símbolo")]
+        [Xunit.TraitAttribute("FeatureTitle", "Registro de usuário")]
+        [Xunit.TraitAttribute("Description", "Tentar registrar um usuário com senha sem símbolo")]
+        public virtual void TentarRegistrarUmUsuarioComSenhaSemSimbolo()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Tentar registrar um usu�rio com nome muito curto", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 64
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Tentar registrar um usuário com senha sem símbolo", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 65
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -568,28 +609,29 @@ namespace Identity.SpecFlow.Tests.Features
             else
             {
                 this.ScenarioStart();
-#line 65
-    testRunner.Given("que o usu�rio preenche o nome com \"Ana\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
 #line 66
-    testRunner.When("ele envia o formul�rio de registro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("que o usuario esta na pagina de cadastro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line hidden
 #line 67
-    testRunner.Then("ele deve ver a mensagem de erro \"O nome deve ter no m�nimo 8 caracteres.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.And("que o usuário preenche a senha com \"Senha1234\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line hidden
+#line 68
+    testRunner.Then("a senha deve exibir a mensagem \"A senha deve conter pelo menos um símbolo especia" +
+                        "l (@, $, !, %, * ou &).\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Tentar registrar um usu�rio sem preencher o nome")]
-        [Xunit.TraitAttribute("FeatureTitle", "Registro de usu�rio")]
-        [Xunit.TraitAttribute("Description", "Tentar registrar um usu�rio sem preencher o nome")]
-        public virtual void TentarRegistrarUmUsuRioSemPreencherONome()
+        [Xunit.SkippableFactAttribute(DisplayName="Tentar registrar um usuário com uma data de nascimento inválida")]
+        [Xunit.TraitAttribute("FeatureTitle", "Registro de usuário")]
+        [Xunit.TraitAttribute("Description", "Tentar registrar um usuário com uma data de nascimento inválida")]
+        public virtual void TentarRegistrarUmUsuarioComUmaDataDeNascimentoInvalida()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Tentar registrar um usu�rio sem preencher o nome", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 69
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Tentar registrar um usuário com uma data de nascimento inválida", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 70
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -609,14 +651,55 @@ namespace Identity.SpecFlow.Tests.Features
             else
             {
                 this.ScenarioStart();
-#line 70
-    testRunner.Given("que o usu�rio n�o preenche o campo nome", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
 #line 71
-    testRunner.When("ele envia o formul�rio de registro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("que o usuario esta na pagina de cadastro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line hidden
 #line 72
-    testRunner.Then("ele deve ver a mensagem de erro \"O telefone � obrigat�rio.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.And("que o usuário preenche a data de nascimento com \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line hidden
+#line 73
+    testRunner.Then("a data de nascimento deve exibir a mensagem \"Data inválida.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Tentar registrar um usuário com nome muito curto")]
+        [Xunit.TraitAttribute("FeatureTitle", "Registro de usuário")]
+        [Xunit.TraitAttribute("Description", "Tentar registrar um usuário com nome muito curto")]
+        public virtual void TentarRegistrarUmUsuarioComNomeMuitoCurto()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Tentar registrar um usuário com nome muito curto", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 75
+  this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 76
+    testRunner.Given("que o usuario esta na pagina de cadastro", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+#line hidden
+#line 77
+    testRunner.And("que o usuário preenche o nome com \"Ana\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+#line hidden
+#line 78
+    testRunner.Then("o nome deve exibir a mensagem \"O nome deve ter no mínimo 8 caracteres.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Entao ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -629,12 +712,12 @@ namespace Identity.SpecFlow.Tests.Features
             
             public FixtureData()
             {
-                RegistroDeUsuRioFeature.FeatureSetup();
+                RegistroDeUsuarioFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                RegistroDeUsuRioFeature.FeatureTearDown();
+                RegistroDeUsuarioFeature.FeatureTearDown();
             }
         }
     }

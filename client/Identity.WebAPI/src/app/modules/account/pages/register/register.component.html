@@ -1,40 +1,81 @@
 <div class="auth-container">
-    <div class="auth-form">
-      <h2>Cadastro</h2>
-      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-          <label for="name">Nome</label>
-          <input formControlName="nome" type="text" id="name" placeholder="Digite seu nome" required />
-        </div>
-        
-        <div class="form-group">
-          <label for="email">E-mail</label>
-          <input formControlName="email" type="email" id="email" placeholder="Digite seu e-mail" required />
+  <div class="auth-form">
+    <h2>Cadastro</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Nome</label>
+        <input formControlName="nome" type="text" id="name" placeholder="Digite seu nome" required />
+        <small id="name-error" *ngIf="registerForm.get('nome')?.touched && registerForm.get('nome')?.errors?.['required']">O nome é obrigatório.</small>
+        <small id="name-error" *ngIf="registerForm.get('nome')?.touched && registerForm.get('nome')?.errors?.['minLength']">O nome é invalido.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input formControlName="email" type="email" id="email" placeholder="Digite seu e-mail" required />
+        <small id="email-error" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['required']">O email é obrigatório.</small>
+        <small id="email-error" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['email']">O email é invalido.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="telefone">Telefone</label>
+        <input formControlName="telefone" type="phone" id="phone" placeholder="Digite seu telefone" required />
+        <small id="phone-error" *ngIf="registerForm.get('telefone')?.touched && registerForm.get('telefone')?.errors?.['required']">O telefone é obrigatório.</small>
+        <small id="phone-error" *ngIf="registerForm.get('telefone')?.errors?.['tamanhoInvalido']">
+          O telefone deve ter 10 ou 11 dígitos, incluindo o DDD.
+        </small>
+        <small id="phone-error" *ngIf="registerForm.get('telefone')?.errors?.['dddInvalido']">O DDD não é válido.</small>
+      </div>
+
+      <div>
+        <label for="birthDate">Data de Nascimento</label>
+        <input id="birthDate" formControlName="dataNascimento" type="date">
+        <small id="birthDate-error" *ngIf="registerForm.get('dataNascimento')?.touched && registerForm.get('dataNascimento')?.errors?.['required']">A data de nascimento é obrigatória.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Senha</label>
+        <div class="password-container">
+          <!-- Input de senha com tipo dinâmico (password ou text) -->
+          <input formControlName="password" [type]="isPasswordVisible ? 'text' : 'password'" id="password"
+            placeholder="Digite sua senha" required />
+          <!-- Ícone de olho para alternar visibilidade da senha -->
+          <span class="eye-icon" (click)="togglePasswordVisibility()">
+            <i [class]="isPasswordVisible ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
+          </span>
         </div>
 
-        <div class="form-group">
-          <label for="telefone">Telefone</label>
-          <input formControlName="telefone" type="phone" id="phone" placeholder="Digite seu telefone" required />
+        <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
+          <small id="password-error" *ngIf="registerForm.get('password')?.errors?.['required']">A senha é obrigatória.</small>
+          <small id="password-error" *ngIf="registerForm.get('password')?.errors?.['minLength']">
+            A senha deve ter no mínimo 8 caracteres.
+          </small>
+          <small id="password-error" *ngIf="registerForm.get('password')?.errors?.['uppercase']">
+            A senha deve conter pelo menos uma letra maiúscula.
+          </small>
+          <small id="password-error" *ngIf="registerForm.get('password')?.errors?.['lowercase']">
+            A senha deve conter pelo menos uma letra minúscula.
+          </small>
+          <small id="password-error" *ngIf="registerForm.get('password')?.errors?.['number']">
+            A senha deve conter pelo menos um número.
+          </small>
+          <small id="password-error" *ngIf="registerForm.get('password')?.errors?.['symbol']">
+            {{'A senha deve conter pelo menos um símbolo especial (@, $, !, %, * ou &).'}}
+          </small>
         </div>
-  
-        <div>
-          <label for="birthDate">Birth Date</label>
-          <input id="birthDate" formControlName="dataNascimento" type="date">
-        </div>
+      </div>
 
-        <div class="form-group">
-          <label for="password">Senha</label>
-          <input formControlName="password" type="password" id="password" placeholder="Digite sua senha" required />
-        </div>
-  
-        <div class="form-group">
-          <label for="confirm-password">Confirmar Senha</label>
-          <input formControlName="confirmPassword" type="password" id="confirm-password" placeholder="Confirme sua senha" required />
-        </div>
-  
-        <button type="submit" class="btn-submit">Cadastrar</button>
-      </form>
-      <p class="login-link">Já tem uma conta? <a routerLink="/account/login">Faça login</a></p>
-    </div>
+      <div class="form-group">
+        <label for="confirm-password">Confirmar Senha</label>
+        <input formControlName="confirmPassword" type="password" id="confirm-password" placeholder="Confirme sua senha"
+          required />
+        <small id="confirm-password-error" *ngIf="registerForm.get('confirmPassword')?.touched && registerForm.get('confirmPassword')?.errors?.['required']">A confirmação de senha é obrigatória.</small>
+        <small id="confirm-password-error" *ngIf="registerForm.errors?.['passwordsMismatch'] && registerForm.get('confirmPassword')?.touched">
+          As senhas não coincidem.
+        </small>
+      </div>
+
+      <button type="submit" class="btn-submit" [disabled]="registerForm.invalid">Cadastrar</button>
+    </form>
+    <p class="login-link">Já tem uma conta? <a routerLink="/account/login">Faça login</a></p>
   </div>
-  
+</div>
