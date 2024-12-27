@@ -82,10 +82,10 @@ namespace Identity.API.Controllers
             if (user == null)
                 return Unauthorized("Usuário ou senha inválidos");
 
-            var block = await _redisService.IsLoginBlockedAsync(model.Email);
+            //var block = await _redisService.IsLoginBlockedAsync(model.Email);
 
-            if (block)
-                return Unauthorized("Usuário ou senha inválidos");
+            //if (block)
+            //    return Unauthorized("Usuário ou senha inválidos");
 
             var result = await _signInManager.PasswordSignInAsync(user, model.Password, false, false);
 
@@ -98,14 +98,14 @@ namespace Identity.API.Controllers
             };
                 var token = GetToken(authClaims, user);
 
-                await _redisService.ResetLoginAttemptsAsync(model.Email);
+                //await _redisService.ResetLoginAttemptsAsync(model.Email);
 
                 Console.WriteLine($"Token gerado: {token.Value}");
 
                 return Ok(token);
             }
 
-            await _redisService.IncrementLoginAttemptAsync(model.Email);
+            //await _redisService.IncrementLoginAttemptAsync(model.Email);
 
             return Unauthorized("Usuário ou senha inválidos");
         }
@@ -153,7 +153,7 @@ namespace Identity.API.Controllers
             var resetId = Guid.NewGuid().ToString("N"); // "N" remove os hífens para deixar o GUID mais curto
 
             // Armazenar o token no Redis com esse identificador curto
-            await _redisService.SetValueAsync($"reset_token_{resetId}", token, TimeSpan.FromMinutes(10));
+            //await _redisService.SetValueAsync($"reset_token_{resetId}", token, TimeSpan.FromMinutes(10));
 
             // Gerar o link de redefinição com o identificador curto
             var resetLink = $"http://localhost:4200/account/change-password/{resetId}";
@@ -173,11 +173,11 @@ namespace Identity.API.Controllers
                 return BadRequest("Dados inválidos.");
 
             // Verifica se o token gerado para o e-mail existe no Redis
-            var tokenFromRedis = await _redisService.GetValueAsync($"reset_token_{model.Token}");
+            //var tokenFromRedis = await _redisService.GetValueAsync($"reset_token_{model.Token}");
 
 
-            if (string.IsNullOrEmpty(tokenFromRedis))
-                return BadRequest("Token de recuperação expirado ou inválido.");
+            //if (string.IsNullOrEmpty(tokenFromRedis))
+            //    return BadRequest("Token de recuperação expirado ou inválido.");
 
             // Encontra o usuário com o e-mail fornecido
             var user = await _userManager.FindByEmailAsync(model.Email);
@@ -186,12 +186,12 @@ namespace Identity.API.Controllers
                 return BadRequest("Não encontramos um usuário com este e-mail");
 
             // Verifica se o token fornecido é válido
-            var resetResult = await _userManager.ResetPasswordAsync(user, tokenFromRedis, model.NewPassword);
+            //var resetResult = await _userManager.ResetPasswordAsync(user, tokenFromRedis, model.NewPassword);
 
-            if (!resetResult.Succeeded)
-            {
-                return BadRequest("Falha ao redefinir a senha. Verifique o token ou a nova senha.");
-            }
+            //if (!resetResult.Succeeded)
+            //{
+            //    return BadRequest("Falha ao redefinir a senha. Verifique o token ou a nova senha.");
+            //}
 
             // Se a redefinição de senha foi bem-sucedida, retorna um status positivo
             return Ok(new { message = "Senha redefinida com sucesso." });
@@ -252,7 +252,7 @@ namespace Identity.API.Controllers
             // Enviar o token para o e-mail do usuário
             await _emailService.SendEmailAsync(user.Email, "Confirmação de E-mail", $"Seu token de confirmação é: {guid}");
 
-            await _redisService.SetValueAsync($"token_email_confirmation_{guid}", token, TimeSpan.FromMinutes(10));
+            //await _redisService.SetValueAsync($"token_email_confirmation_{guid}", token, TimeSpan.FromMinutes(10));
 
             return Ok(new { message = "Token de confirmação de e-mail enviado." });
         }
@@ -275,7 +275,7 @@ namespace Identity.API.Controllers
             // Enviar o token por SMS para o número de telefone
             await _whatsAppService.SendSmsAsync(user.PhoneNumber, $"Seu token de confirmação é: {token}");
 
-            await _redisService.SetValueAsync($"token_PhoneNumber_confirmation_{model.PhoneNumber}", token, TimeSpan.FromMinutes(10));
+            //await _redisService.SetValueAsync($"token_PhoneNumber_confirmation_{model.PhoneNumber}", token, TimeSpan.FromMinutes(10));
 
             return Ok(new { message = "Token de confirmação de telefone enviado." });
         }
@@ -285,15 +285,15 @@ namespace Identity.API.Controllers
         [Authorize]
         public async Task<IActionResult> ValidateEmailToken([FromBody] ValidateTokenModel model)
         {
-            var emailTokenFromRedis = await _redisService.GetValueAsync($"token_email_confirmation_{model.Token}");
+            //var emailTokenFromRedis = await _redisService.GetValueAsync($"token_email_confirmation_{model.Token}");
 
-            if (string.IsNullOrEmpty(emailTokenFromRedis))
-                return BadRequest("Token de validação expirado ou inválido.");
+            //if (string.IsNullOrEmpty(emailTokenFromRedis))
+            //    return BadRequest("Token de validação expirado ou inválido.");
 
-            var isValid = await _tokenService.ValidateTokenAsync(emailTokenFromRedis, email: model.Email);
+            //var isValid = await _tokenService.ValidateTokenAsync(emailTokenFromRedis, email: model.Email);
 
-            if (!isValid)
-                return BadRequest("Token de confirmação de e-mail inválido");
+            //if (!isValid)
+            //    return BadRequest("Token de confirmação de e-mail inválido");
 
             var user = await GetUser();
 
@@ -307,10 +307,10 @@ namespace Identity.API.Controllers
         [Authorize]
         public async Task<IActionResult> ValidatePhoneToken([FromBody] ValidateTokenModel model)
         {
-            var phoneTokenFromRedis = await _redisService.GetValueAsync($"token_PhoneNumber_confirmation_{model.PhoneNumber}");
+            //var phoneTokenFromRedis = await _redisService.GetValueAsync($"token_PhoneNumber_confirmation_{model.PhoneNumber}");
 
-            if (string.IsNullOrEmpty(phoneTokenFromRedis))
-                return BadRequest("Token de validação expirado ou inválido.");
+            //if (string.IsNullOrEmpty(phoneTokenFromRedis))
+            //    return BadRequest("Token de validação expirado ou inválido.");
 
 
             var isValid = await _tokenService.ValidateTokenAsync(model.Token, phoneNumber: model.PhoneNumber);
