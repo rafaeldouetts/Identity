@@ -75,11 +75,11 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 // Configura a conexão com o Redis
-builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
-{
-    var configuration = builder.Configuration.GetConnectionString("RedisConnection");
-    return ConnectionMultiplexer.Connect(configuration);
-});
+//builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
+//{
+//    var configuration = builder.Configuration.GetConnectionString("RedisConnection");
+//    return ConnectionMultiplexer.Connect(configuration);
+//});
 
 var teste = builder.Configuration.GetConnectionString("DefaultConnection");
 
@@ -154,47 +154,47 @@ builder.Logging.AddConsole(); // Para logs no console
 var app = builder.Build();
 
 // Middleware para exibir o token recebido
-app.Use(async (context, next) =>
-{
-    var token = context.Request.Headers["Authorization"].ToString();
+//app.Use(async (context, next) =>
+//{
+//    var token = context.Request.Headers["Authorization"].ToString();
 
-    if (string.IsNullOrEmpty(token))
-    {
-        Console.WriteLine("Token não fornecido.");
-        await next();
-        return;
-    }
+//    if (string.IsNullOrEmpty(token))
+//    {
+//        Console.WriteLine("Token não fornecido.");
+//        await next();
+//        return;
+//    }
 
-    // Remover o prefixo 'Bearer' se presente
-    if (token.StartsWith("Bearer ", StringComparison.OrdinalIgnoreCase))
-    {
-        token = token.Substring(7);
-    }
+//    // Remover o prefixo 'Bearer' se presente
+//    if (token.StartsWith("Bearer ", StringComparison.OrdinalIgnoreCase))
+//    {
+//        token = token.Substring(7);
+//    }
 
-    // Verificar a validade do token
-    try
-    {
-        // Criar o validador do token JWT
-        var tokenHandler = new JwtSecurityTokenHandler();
-        var jsonToken = tokenHandler.ReadToken(token) as JwtSecurityToken;
+//    // Verificar a validade do token
+//    try
+//    {
+//        // Criar o validador do token JWT
+//        var tokenHandler = new JwtSecurityTokenHandler();
+//        var jsonToken = tokenHandler.ReadToken(token) as JwtSecurityToken;
 
-        if (jsonToken == null)
-        {
-            Console.WriteLine("Token JWT inválido.");
-        }
-        else
-        {
-            Console.WriteLine($"Token JWT válido: {jsonToken.Header.Alg}");
-            // Se desejar, pode acessar o payload do token: jsonToken.Payload
-        }
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine($"Erro ao validar o token: {ex.Message}");
-    }
+//        if (jsonToken == null)
+//        {
+//            Console.WriteLine("Token JWT inválido.");
+//        }
+//        else
+//        {
+//            Console.WriteLine($"Token JWT válido: {jsonToken.Header.Alg}");
+//            // Se desejar, pode acessar o payload do token: jsonToken.Payload
+//        }
+//    }
+//    catch (Exception ex)
+//    {
+//        Console.WriteLine($"Erro ao validar o token: {ex.Message}");
+//    }
 
-    await next();
-});
+//    await next();
+//});
 
 // Configuração do CORS
 app.UseCors();

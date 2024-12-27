@@ -25,7 +25,7 @@ namespace Identity.API.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IConfiguration _configuration;
         private readonly IBlobService _blobService;
-        private readonly IRedisService _redisService;
+        //private readonly IRedisService _redisService;
         private readonly ITokenService _tokenService;
         private readonly IEmailService _emailService; 
         private readonly IWhatsAppService _whatsAppService;
@@ -37,7 +37,7 @@ namespace Identity.API.Controllers
             _signInManager = signInManager;
             _configuration = configuration;
             _blobService = blobService;
-            _redisService = redisService;
+            //_redisService = redisService;
             _tokenService = tokenService;
             _emailService = emailService;
             _whatsAppService = whatsAppService;
