@@ -145,3 +145,7 @@ Na janela de salvar, clique na seta para baixo (ao lado do botão Salvar).
 Selecione a opção Codificação....
 
 Isso abrirá uma janela onde você poderá ver a codificação atual do arquivo. Se estiver usando UTF-8, você verá essa opção selecionada. Caso contrário, você pode alterar a codificação para UTF-8.
+
+
+
+senha do banco 02c39388-60e5-4714-bdb4-d716f4edfcc6
