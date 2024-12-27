@@ -31,7 +31,7 @@ namespace Identity.API.Controllers
         private readonly IWhatsAppService _whatsAppService;
         private readonly ITwoFactorAuthService _twoFactorAuthService;
 
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IConfiguration configuration, IBlobService blobService, IRedisService redisService, ITokenService tokenService, IEmailService emailService, IWhatsAppService whatsAppService, ITwoFactorAuthService twoFactorAuthService)
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IConfiguration configuration, IBlobService blobService, ITokenService tokenService, IEmailService emailService, IWhatsAppService whatsAppService, ITwoFactorAuthService twoFactorAuthService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
