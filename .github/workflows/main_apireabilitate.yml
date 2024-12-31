@@ -56,7 +56,7 @@ jobs:
         if: always()
         with:
           name: test-results
-          path: test-results.trx
+          path: tests/Identity.SpecFlow.Tests/TestResults/test-results.trx
 
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
