@@ -34,6 +34,17 @@ jobs:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
 
+  e2e-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Rodando os testes E2E
+      - name: Rodar E2E testes
+        run: |
+          # Coloque o comando para rodar os seus testes E2E, por exemplo:
+          dotnet test tests/Identity.SpecFlow.Tests/
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
