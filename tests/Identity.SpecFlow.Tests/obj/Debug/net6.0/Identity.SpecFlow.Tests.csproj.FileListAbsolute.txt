@@ -246,3 +246,5 @@ C:\Users\r_san\Documents\projetos\Identity\tests\Identity.SpecFlow.Tests\obj\Deb
 C:\Users\r_san\Documents\projetos\Identity\tests\Identity.SpecFlow.Tests\obj\Debug\net6.0\Identity.SpecFlow.Tests.pdb
 C:\Users\r_san\Documents\projetos\Identity\tests\Identity.SpecFlow.Tests\obj\Debug\net6.0\Identity.SpecFlow.Tests.genruntimeconfig.cache
 C:\Users\r_san\Documents\projetos\Identity\tests\Identity.SpecFlow.Tests\obj\Debug\net6.0\ref\Identity.SpecFlow.Tests.dll
+C:\Users\r_san\Documents\projetos\Identity\tests\Identity.SpecFlow.Tests\bin\Debug\net6.0\Ductus.FluentDocker.dll
+C:\Users\r_san\Documents\projetos\Identity\tests\Identity.SpecFlow.Tests\bin\Debug\net6.0\SharpCompress.dll

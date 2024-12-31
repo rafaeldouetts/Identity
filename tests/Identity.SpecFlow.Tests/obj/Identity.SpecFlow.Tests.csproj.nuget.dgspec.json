@@ -50,6 +50,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Ductus.FluentDocker": {
+              "target": "Package",
+              "version": "[2.10.59, )"
+            },
             "FluentAssertions": {
               "target": "Package",
               "version": "[6.2.0, )"
