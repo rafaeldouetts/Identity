@@ -27,7 +27,7 @@ namespace Identity.Domain.Domain
         public DateTime? DataNascimento { get; set; }
 
         [StringLength(100, MinimumLength = 8, ErrorMessage = "O nome deve ter no mínimo 8 caracteres.")]
-        [Required(ErrorMessage = "O telefone é obrigatório.")]
+        [Required(ErrorMessage = "O nome é obrigatório.")]
         public string Nome { get; set; }
     }
 }
