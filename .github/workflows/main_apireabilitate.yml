@@ -53,6 +53,7 @@ jobs:
       # Publicar os resultados dos testes (Arquivo TRX)
       - name: Publicar resultados dos testes
         uses: actions/upload-artifact@v3
+        if: always()
         with:
           name: test-results
           path: test-results.trx
