@@ -76,6 +76,11 @@ jobs:
           name: test-results
           path: tests/Identity.SpecFlow.Tests/TestResults/test-results.trx
 
+      - name: Listar arquivos na pasta videos
+        run: |
+          echo "Arquivos na pasta videos:"
+          ls -R videos
+
       - name: Publicar vídeos gerados
         uses: actions/upload-artifact@v3
         if: always()
