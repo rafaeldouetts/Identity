@@ -49,7 +49,7 @@ jobs:
     - name: Run Trivy scan on Docker image
       run: |
         docker build -t identity .
-        trivy image --format template --output trivy-report.html --template devops/Trivy/html.tpl -o report.html identity
+        trivy image --format template --template devops/Trivy/html.tpl -o trivy-report.html identity
 
     - name: Upload Trivy report
       uses: actions/upload-artifact@v3
