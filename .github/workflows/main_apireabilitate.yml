@@ -55,7 +55,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: trivy-report
-        path: trivy-report.json
+        path: trivy-report.html
 
   Unit-tests:
     runs-on: ubuntu-latest
