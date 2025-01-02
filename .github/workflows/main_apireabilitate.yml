@@ -56,8 +56,6 @@ jobs:
           dotnet tool install --global coverlet.console
           dotnet tool install --global dotnet-reportgenerator-globaltool
 
-          dotnet test
-
       - name: Relatorio UNit tests 
         if: always()
         run: |
@@ -65,6 +63,12 @@ jobs:
           reportgenerator "-reports:TestResults/coverage.xml" "-targetdir:coveragereport" -reporttypes:HTML       
           ls -R
           
+      - name: Publicar resultados dos testes unitarios
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: unit-test-results
+          path: coveragereport/
   e2e-tests:
     runs-on: ubuntu-latest
     steps:
