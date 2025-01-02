@@ -34,6 +34,25 @@ jobs:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
 
+  Unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '8.x'
+          include-prerelease: true
+
+      - name: Rodar UNIT testes
+        run: |
+          dotnet tool install --global coverlet.console
+          dotnet tool install --global dotnet-reportgenerator-globaltool
+
+          coverlet \tests\Identity.Unit.Tests\bin\Debug\net8.0\Identity.Unit.Tests.dll --target "dotnet" --targetargs "test \tests\Identity.Unit.Tests\Identity.Unit.Tests.csproj --no-build --collect:\"Code Coverage\"" --format cobertura --output TestResults\coverage.xml && reportgenerator "-reports:TestResults\coverage.xml" "-targetdir:coveragereport" -reporttypes:HTML
+          reportgenerator "-reports:TestResults\coverage.xml" "-targetdir:coveragereport" -reporttypes:HTML       
+          
   e2e-tests:
     runs-on: ubuntu-latest
     steps:
