@@ -10,6 +10,8 @@
         "dependencies": {
           "BenchmarkDotNet": "0.14.0",
           "Identity.Domain": "1.0.0",
+          "Identity.Shared.Tests": "1.0.0",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "Newtonsoft.Json": "13.0.1"
         },
         "runtime": {
@@ -84,6 +86,18 @@
           "lib/netstandard2.0/CommandLine.dll": {
             "assemblyVersion": "2.9.1.0",
             "fileVersion": "2.9.1.0"
+          }
+        }
+      },
+      "Ductus.FluentDocker/2.10.59": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "SharpCompress": "0.29.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Ductus.FluentDocker.dll": {
+            "assemblyVersion": "1.0.411.0",
+            "fileVersion": "1.0.411.0"
           }
         }
       },
@@ -166,6 +180,29 @@
           "lib/net8.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {
             "assemblyVersion": "8.0.0.0",
             "fileVersion": "8.0.1124.52116"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Http.Abstractions/2.2.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "2.2.0",
+          "System.Text.Encodings.Web": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.18316"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Http.Features/2.2.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "8.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.18316"
           }
         }
       },
@@ -746,6 +783,14 @@
           }
         }
       },
+      "SharpCompress/0.29.0": {
+        "runtime": {
+          "lib/net5.0/SharpCompress.dll": {
+            "assemblyVersion": "0.29.0.0",
+            "fileVersion": "0.29.0.0"
+          }
+        }
+      },
       "StackExchange.Redis/2.8.16": {
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "8.0.2",
@@ -987,6 +1032,7 @@
       "Identity.Domain/1.0.0": {
         "dependencies": {
           "Identity.Infra": "1.0.0",
+          "Newtonsoft.Json": "13.0.1",
           "StackExchange.Redis": "2.8.16"
         },
         "runtime": {
@@ -1001,6 +1047,14 @@
         },
         "runtime": {
           "Identity.Infra.dll": {}
+        }
+      },
+      "Identity.Shared.Tests/1.0.0": {
+        "dependencies": {
+          "Ductus.FluentDocker": "2.10.59"
+        },
+        "runtime": {
+          "Identity.Shared.Tests.dll": {}
         }
       }
     }
@@ -1046,6 +1100,13 @@
       "path": "commandlineparser/2.9.1",
       "hashPath": "commandlineparser.2.9.1.nupkg.sha512"
     },
+    "Ductus.FluentDocker/2.10.59": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-y/wx7G5iNVSRRBnXuEQ5PVjFJfQAZXdqyv2WBqmxBCa089SQssibyOjcyUv/eskL2Hxap2+UHe3qQnlEHlAh1g==",
+      "path": "ductus.fluentdocker/2.10.59",
+      "hashPath": "ductus.fluentdocker.2.10.59.nupkg.sha512"
+    },
     "Gee.External.Capstone/2.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1073,6 +1134,20 @@
       "sha512": "sha512-w7zU4Bh6AEHsu5spE4OIoZ/z68mMvZITUl0wUAU7tS4vwc+szzht2wKitH1KwODrjHfHk0MAkyw3l6SIR62zBg==",
       "path": "microsoft.aspnetcore.cryptography.keyderivation/8.0.11",
       "hashPath": "microsoft.aspnetcore.cryptography.keyderivation.8.0.11.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Http.Abstractions/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Nxs7Z1q3f1STfLYKJSVXCs1iBl+Ya6E8o4Oy1bCxJ/rNI44E/0f6tbsrVqAWfB7jlnJfyaAtIalBVxPKUPQb4Q==",
+      "path": "microsoft.aspnetcore.http.abstractions/2.2.0",
+      "hashPath": "microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Http.Features/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ziFz5zH8f33En4dX81LW84I6XrYXKf9jg6aM39cM+LffN9KJahViKZ61dGMSO2gd3e+qe5yBRwsesvyqlZaSMg==",
+      "path": "microsoft.aspnetcore.http.features/2.2.0",
+      "hashPath": "microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Identity.EntityFrameworkCore/8.0.11": {
       "type": "package",
@@ -1382,6 +1457,13 @@
       "path": "pipelines.sockets.unofficial/2.2.8",
       "hashPath": "pipelines.sockets.unofficial.2.2.8.nupkg.sha512"
     },
+    "SharpCompress/0.29.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-k7iUB0mZWS6eEj6L0PuuxASzjpQvlYKfHJ0JtnHBJFbU3VeQJ4SNQC4eloiYsPbmFrJCJYiqFhV4AZuBXpIXiQ==",
+      "path": "sharpcompress/0.29.0",
+      "hashPath": "sharpcompress.0.29.0.nupkg.sha512"
+    },
     "StackExchange.Redis/2.8.16": {
       "type": "package",
       "serviceable": true,
@@ -1591,6 +1673,11 @@
       "sha512": ""
     },
     "Identity.Infra/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Identity.Shared.Tests/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

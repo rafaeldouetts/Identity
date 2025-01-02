@@ -137,3 +137,5 @@ C:\Users\r_san\Documents\projetos\Identity\tests\Identity.Benchmark.Tests\obj\Re
 C:\Users\r_san\Documents\projetos\Identity\tests\Identity.Benchmark.Tests\obj\Release\net8.0\Identity.Benchmark.Tests.pdb
 C:\Users\r_san\Documents\projetos\Identity\tests\Identity.Benchmark.Tests\obj\Release\net8.0\Identity.Benchmark.Tests.genruntimeconfig.cache
 C:\Users\r_san\Documents\projetos\Identity\tests\Identity.Benchmark.Tests\obj\Release\net8.0\ref\Identity.Benchmark.Tests.dll
+C:\Users\r_san\Documents\projetos\Identity\tests\Identity.Benchmark.Tests\bin\Release\net8.0\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\r_san\Documents\projetos\Identity\tests\Identity.Benchmark.Tests\bin\Release\net8.0\Microsoft.AspNetCore.Http.Features.dll

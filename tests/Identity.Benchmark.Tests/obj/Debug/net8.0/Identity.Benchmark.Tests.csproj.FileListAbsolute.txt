@@ -137,3 +137,9 @@ C:\Users\r_san\Documents\projetos\Identity\tests\Identity.Benchmark.Tests\obj\De
 C:\Users\r_san\Documents\projetos\Identity\tests\Identity.Benchmark.Tests\obj\Debug\net8.0\Identity.Benchmark.Tests.pdb
 C:\Users\r_san\Documents\projetos\Identity\tests\Identity.Benchmark.Tests\obj\Debug\net8.0\Identity.Benchmark.Tests.genruntimeconfig.cache
 C:\Users\r_san\Documents\projetos\Identity\tests\Identity.Benchmark.Tests\obj\Debug\net8.0\ref\Identity.Benchmark.Tests.dll
+C:\Users\r_san\Documents\projetos\Identity\tests\Identity.Benchmark.Tests\bin\Debug\net8.0\Ductus.FluentDocker.dll
+C:\Users\r_san\Documents\projetos\Identity\tests\Identity.Benchmark.Tests\bin\Debug\net8.0\SharpCompress.dll
+C:\Users\r_san\Documents\projetos\Identity\tests\Identity.Benchmark.Tests\bin\Debug\net8.0\Identity.Shared.Tests.dll
+C:\Users\r_san\Documents\projetos\Identity\tests\Identity.Benchmark.Tests\bin\Debug\net8.0\Identity.Shared.Tests.pdb
+C:\Users\r_san\Documents\projetos\Identity\tests\Identity.Benchmark.Tests\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\r_san\Documents\projetos\Identity\tests\Identity.Benchmark.Tests\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Features.dll
