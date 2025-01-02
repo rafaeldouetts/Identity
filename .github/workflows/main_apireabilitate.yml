@@ -75,12 +75,6 @@ jobs:
         with:
           name: test-results
           path: tests/Identity.SpecFlow.Tests/TestResults/test-results.trx
-
-      - name: Listar arquivos
-        if: always()
-        run: |
-          echo "Arquivos:"
-          ls -R
           
       - name: Living Docs HTML
         if: always()
@@ -88,6 +82,12 @@ jobs:
           dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI
           livingdoc test-assembly tests/Identity.SpecFlow.Tests/bin/Debug/net6.0/Identity.SpecFlow.Tests.dll -t tests/Identity.SpecFlow.Tests/bin/Debug/net6.0/TestExecution.json --project-language pt-br
 
+      - name: Listar arquivos
+        if: always()
+        run: |
+          echo "Arquivos:"
+          ls -R
+          
       - name: Publicar resultados Living Docs
         uses: actions/upload-artifact@v3
         if: always()
