@@ -93,7 +93,7 @@ jobs:
         if: always()
         with:
           name: LivingDocs-results
-          path: tests/Identity.SpecFlow.Tests/bin/Debug/net6.0/LivingDoc.html
+          path: LivingDoc.html
 
 
       - name: Publicar vídeos gerados
