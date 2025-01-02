@@ -72,7 +72,7 @@ jobs:
 
       - name: Rodar Benchmark testes
         run: |
-         dotnet run -c Release
+         dotnet run tests/Identity.Benchmark.Tests/Identity.Benchmark.Tests.csproj -c Release
  
       - name: Publicar resultados dos testes de benchmark
         uses: actions/upload-artifact@v3
