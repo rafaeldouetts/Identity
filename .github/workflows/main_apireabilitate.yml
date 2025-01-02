@@ -57,6 +57,10 @@ jobs:
           dotnet tool install --global dotnet-reportgenerator-globaltool
 
           dotnet test
+
+      - name: Relatorio UNit tests 
+        if: always()
+        run: |
           coverlet tests/Identity.Unit.Tests/bin/Debug/net8.0/Identity.Unit.Tests.dll --target "dotnet" --targetargs "test tests/Identity.Unit.Tests/Identity.Unit.Tests.csproj --collect:\"Code Coverage\"" --format cobertura --output TestResults/coverage.xml && reportgenerator "-reports:TestResults/coverage.xml" "-targetdir:coveragereport" -reporttypes:HTML
 
           ls -R
