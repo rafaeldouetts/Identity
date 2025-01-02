@@ -59,6 +59,28 @@ jobs:
         name: trivy-report
         path: trivy-report.html
 
+  benchmark-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+    
+      - name: Set up .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '8.x'
+          include-prerelease: true
+
+      - name: Rodar Benchmark testes
+        run: |
+         dotnet run --project tests/Identity.Benchmark.Tests/Identity.Benchmark.Tests.csproj -c Release
+ 
+      - name: Publicar resultados dos testes de benchmark
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: BenchmarkDotNet.Artifacts
+          path: BenchmarkDotNet.Artifacts/
+
   Unit-tests:
     runs-on: ubuntu-latest
     steps:
@@ -95,6 +117,7 @@ jobs:
         with:
           name: unit-test-results
           path: coveragereport/
+          
   e2e-tests:
     runs-on: ubuntu-latest
     steps:
