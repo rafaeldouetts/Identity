@@ -34,6 +34,29 @@ jobs:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
 
+  trivy-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install Trivy
+      run: |
+        wget https://github.com/aquasecurity/trivy/releases/download/v0.40.0/trivy_0.40.0_Linux-64bit.deb
+        sudo dpkg -i trivy_0.40.0_Linux-64bit.deb
+
+    - name: Run Trivy scan on Docker image
+      run: |
+        docker build -t my-image .
+        trivy image --format json --output trivy-report.json my-image
+
+    - name: Upload Trivy report
+      uses: actions/upload-artifact@v2
+      with:
+        name: trivy-report
+        path: trivy-report.json
+
   Unit-tests:
     runs-on: ubuntu-latest
     steps:
