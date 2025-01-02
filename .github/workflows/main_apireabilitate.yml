@@ -49,7 +49,7 @@ jobs:
     - name: Run Trivy scan on Docker image
       run: |
         docker build -t my-image .
-        trivy image --format json --output trivy-report.json my-image
+        trivy image --format json --output trivy-report.html my-image
 
     - name: Upload Trivy report
       uses: actions/upload-artifact@v3
