@@ -39,6 +39,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
+      - name: Listar arquivos
+        if: always()
+        run: |
+          echo "Arquivos:"
+          ls -R
+          
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
         with:
@@ -51,6 +57,8 @@ jobs:
           dotnet tool install --global dotnet-reportgenerator-globaltool
 
           coverlet \tests\Identity.Unit.Tests\bin\Debug\net8.0\Identity.Unit.Tests.dll --target "dotnet" --targetargs "test \tests\Identity.Unit.Tests\Identity.Unit.Tests.csproj --no-build --collect:\"Code Coverage\"" --format cobertura --output TestResults\coverage.xml && reportgenerator "-reports:TestResults\coverage.xml" "-targetdir:coveragereport" -reporttypes:HTML
+
+          ls -R
           reportgenerator "-reports:TestResults\coverage.xml" "-targetdir:coveragereport" -reporttypes:HTML       
           
   e2e-tests:
@@ -101,12 +109,6 @@ jobs:
           dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI
           livingdoc test-assembly tests/Identity.SpecFlow.Tests/bin/Debug/net6.0/Identity.SpecFlow.Tests.dll -t tests/Identity.SpecFlow.Tests/bin/Debug/net6.0/TestExecution.json --project-language pt-br
 
-      - name: Listar arquivos
-        if: always()
-        run: |
-          echo "Arquivos:"
-          ls -R
-          
       - name: Publicar resultados Living Docs
         uses: actions/upload-artifact@v3
         if: always()
