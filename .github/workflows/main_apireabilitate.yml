@@ -118,6 +118,9 @@ jobs:
           dotnet-version: '8.x'
           include-prerelease: true
 
+      - name: Restore dependencies
+        run: dotnet restore
+
       - name: Rodar UNIT testes
         run: |
           dotnet tool install --global coverlet.console
