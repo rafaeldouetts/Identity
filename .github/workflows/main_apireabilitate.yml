@@ -32,6 +32,13 @@ jobs:
         run: |
           cd client/Identity.WebAPI/
           ng test --watch=false --browsers=ChromeHeadless --code-coverage
+
+      - name: List files
+        if: always()
+        run: |
+          echo "Arquivos:"
+          ls -R
+
           
       - name: Upload coverage report
         if: always()
@@ -136,12 +143,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
-      - name: List files
-        if: always()
-        run: |
-          echo "Arquivos:"
-          ls -R
 
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
