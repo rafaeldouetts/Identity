@@ -85,7 +85,7 @@ jobs:
           wget https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/html.tpl
           sudo cp html.tpl /usr/bin/html.tpl
 
-      - name: Run Trivy scan on Docker image
+      - name: Run Trivy scan on Docker back-end image
         run: |
           docker build -t identity .
           trivy image --format template --template "@/usr/bin/html.tpl" -o trivy-report.html identity
@@ -93,7 +93,32 @@ jobs:
       - name: Upload Trivy report
         uses: actions/upload-artifact@v3
         with:
-          name: trivy-report
+          name: trivy-report-back-end
+          path: trivy-report.html
+
+  trivy-scan-front-end:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Trivy
+        run: |
+          wget https://github.com/aquasecurity/trivy/releases/download/v0.40.0/trivy_0.40.0_Linux-64bit.deb
+          sudo dpkg -i trivy_0.40.0_Linux-64bit.deb
+          wget https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/html.tpl
+          sudo cp html.tpl /usr/bin/html.tpl
+
+      - name: Run Trivy scan on Docker front-end image
+        run: |
+          docker build -t identity client/Identity.WebAPI
+          trivy image --format template --template "@/usr/bin/html.tpl" -o trivy-report.html identity
+
+      - name: Upload Trivy report
+        uses: actions/upload-artifact@v3
+        with:
+          name: trivy-report-front-end
           path: trivy-report.html
 
   benchmark-tests:
