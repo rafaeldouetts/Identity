@@ -125,7 +125,7 @@ jobs:
         run: |
           dotnet tool install --global coverlet.console
           dotnet tool install --global dotnet-reportgenerator-globaltool
-          dotnet test tests/Identity.Unit.Tests/Identity.Unit.Tests.csproj --verbosity minimal --collect:"XPlat Code Coverage" --filter "Identity.Infra"
+          dotnet test tests/Identity.Unit.Tests/Identity.Unit.Tests.csproj --verbosity minimal --collect:"XPlat Code Coverage"
 
 
       - name: Relatorio UNit tests 
