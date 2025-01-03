@@ -10,6 +10,35 @@ on:
   workflow_dispatch:
 
 jobs:
+ test-angular:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies for Angular
+        run: |
+          cd Identity/client
+          npm install -g @angular/cli
+          npm install
+
+      - name: Run Angular tests
+        run: |
+          cd Identity/client
+          ng test --watch=false --browsers=ChromeHeadless --code-coverage
+          
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v3
+        with:
+          name: angular-coverage-report
+          path: Identity/client/coverage
+          
   build:
     runs-on: ubuntu-latest
 
