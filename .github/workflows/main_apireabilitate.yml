@@ -24,7 +24,7 @@ jobs:
 
       - name: Install dependencies for Angular
         run: |
-          cd client/Identity.WebAPI
+          cd client/Identity.WebAPI/
           npm install -g @angular/cli
           npm install
 
