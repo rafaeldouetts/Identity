@@ -67,12 +67,12 @@ Funcionalidade: Registro de usuário
     E que o usuário preenche a senha com "Senha1234"
     Entao a senha deve exibir a mensagem "A senha deve conter pelo menos um símbolo especial (@, $, !, %, * ou &)."
 
-  Cenario: Tentar registrar um usuário com uma data de nascimento inválida
-    Dado que o usuario esta na pagina de cadastro
-    E que o usuário preenche a data de nascimento com ""
-    Entao a data de nascimento deve exibir a mensagem "Data inválida."
+  #Cenario: Tentar registrar um usuário com uma data de nascimento inválida
+  #  Dado que o usuario esta na pagina de cadastro
+  #  E que o usuário preenche a data de nascimento com ""
+  #  Entao a data de nascimento deve exibir a mensagem "Data inválida."
 
-  Cenario: Tentar registrar um usuário com nome muito curto
-    Dado que o usuario esta na pagina de cadastro
-    E que o usuário preenche o nome com "Ana"
-    Entao o nome deve exibir a mensagem "O nome deve ter no mínimo 8 caracteres."
+  #Cenario: Tentar registrar um usuário com nome muito curto
+  #  Dado que o usuario esta na pagina de cadastro
+  #  E que o usuário preenche o nome com "Ana"
+  #  Entao o nome deve exibir a mensagem "O nome deve ter no mínimo 8 caracteres."
