@@ -30,7 +30,7 @@ jobs:
 
       - name: Run Angular tests
         run: |
-          cd Identity/client
+          cd client/Identity.WebAPI/
           ng test --watch=false --browsers=ChromeHeadless --code-coverage
           
       - name: Upload coverage report
