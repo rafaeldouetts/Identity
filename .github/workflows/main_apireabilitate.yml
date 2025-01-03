@@ -70,6 +70,26 @@ jobs:
           dotnet-version: '8.x'
           include-prerelease: true
 
+      - name: Install Docker
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+          curl -fsSL https://get.docker.com -o get-docker.sh
+          sudo sh get-docker.sh
+          sudo usermod -aG docker $USER
+
+    # Passo para instalar Docker Compose
+      - name: Install Docker Compose
+        run: |
+          DOCKER_COMPOSE_VERSION=1.29.2
+          sudo curl -L "https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+          sudo chmod +x /usr/local/bin/docker-compose
+          docker-compose --version  # Verifica se o Docker Compose foi instalado corretamente
+
+      - name: Run Docker Compose
+        run: |
+          docker-compose up -d
+
       - name: Rodar Benchmark testes
         run: |
          dotnet run --project tests/Identity.Benchmark.Tests/Identity.Benchmark.Tests.csproj -c Release
@@ -102,13 +122,13 @@ jobs:
         run: |
           dotnet tool install --global coverlet.console
           dotnet tool install --global dotnet-reportgenerator-globaltool
-          dotnet test
+          dotnet test --verbosity minimal --collect:"XPlat Code Coverage"
+
 
       - name: Relatorio UNit tests 
         if: always()
         run: |
-          coverlet tests/Identity.Unit.Tests/bin/Debug/net8.0/Identity.Unit.Tests.dll --target "dotnet" --targetargs "test tests/Identity.Unit.Tests/Identity.Unit.Tests.csproj --collect:\"Code Coverage\"" --format cobertura --output TestResults/coverage.xml && reportgenerator "-reports:TestResults/coverage.xml" "-targetdir:coveragereport" -reporttypes:HTML
-          reportgenerator "-reports:TestResults/coverage.xml" "-targetdir:coveragereport" -reporttypes:HTML       
+          reportgenerator "-reports:**/**/coverage.cobertura.xml" "-targetdir:coveragereport" -reporttypes:Html
           ls -R
           
       - name: Publicar resultados dos testes unitarios
