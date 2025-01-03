@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
- test-angular:
+  test-angular:
     runs-on: ubuntu-latest
 
     steps:
@@ -37,13 +37,13 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: angular-coverage-report
-          path: Identity/client/coverage
-          
- build:
+          path: Identity/client/coverage/
+
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
@@ -63,36 +63,37 @@ jobs:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
 
- trivy-scan:
+  trivy-scan:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Install Trivy
-      run: |
-        wget https://github.com/aquasecurity/trivy/releases/download/v0.40.0/trivy_0.40.0_Linux-64bit.deb
-        sudo dpkg -i trivy_0.40.0_Linux-64bit.deb
-        wget https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/html.tpl
-        sudo cp html.tpl /usr/bin/html.tpl
+      - name: Install Trivy
+        run: |
+          wget https://github.com/aquasecurity/trivy/releases/download/v0.40.0/trivy_0.40.0_Linux-64bit.deb
+          sudo dpkg -i trivy_0.40.0_Linux-64bit.deb
+          wget https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/html.tpl
+          sudo cp html.tpl /usr/bin/html.tpl
 
-    - name: Run Trivy scan on Docker image
-      run: |
-        docker build -t identity .
-        trivy image --format template --template "@/usr/bin/html.tpl" -o trivy-report.html identity
+      - name: Run Trivy scan on Docker image
+        run: |
+          docker build -t identity .
+          trivy image --format template --template "@/usr/bin/html.tpl" -o trivy-report.html identity
 
-    - name: Upload Trivy report
-      uses: actions/upload-artifact@v3
-      with:
-        name: trivy-report
-        path: trivy-report.html
+      - name: Upload Trivy report
+        uses: actions/upload-artifact@v3
+        with:
+          name: trivy-report
+          path: trivy-report.html
 
- benchmark-tests:
+  benchmark-tests:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-    
+      - uses: actions/checkout@v3
+
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
         with:
@@ -107,7 +108,6 @@ jobs:
           sudo sh get-docker.sh
           sudo usermod -aG docker $USER
 
-    # Passo para instalar Docker Compose
       - name: Install Docker Compose
         run: |
           DOCKER_COMPOSE_VERSION=1.29.2
@@ -119,28 +119,29 @@ jobs:
         run: |
           docker-compose up -d
 
-      - name: Rodar Benchmark testes
+      - name: Run Benchmark tests
         run: |
-         dotnet run --project tests/Identity.Benchmark.Tests/Identity.Benchmark.Tests.csproj -c Release
- 
-      - name: Publicar resultados dos testes de benchmark
+          dotnet run --project tests/Identity.Benchmark.Tests/Identity.Benchmark.Tests.csproj -c Release
+
+      - name: Publish Benchmark results
         uses: actions/upload-artifact@v3
         if: always()
         with:
           name: BenchmarkDotNet.Artifacts
           path: BenchmarkDotNet.Artifacts/
 
- Unit-tests:
+  unit-tests:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      
-      - name: Listar arquivos
+      - uses: actions/checkout@v3
+
+      - name: List files
         if: always()
         run: |
           echo "Arquivos:"
           ls -R
-          
+
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
         with:
@@ -150,38 +151,37 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore
 
-      - name: Rodar UNIT testes
+      - name: Run Unit tests
         run: |
           dotnet tool install --global coverlet.console
           dotnet tool install --global dotnet-reportgenerator-globaltool
           dotnet test tests/Identity.Unit.Tests/Identity.Unit.Tests.csproj --verbosity minimal --collect:"XPlat Code Coverage"
 
-
-      - name: Relatorio UNit tests 
+      - name: Generate Unit test report
         if: always()
         run: |
           reportgenerator "-reports:**/**/coverage.cobertura.xml" "-targetdir:coveragereport" -reporttypes:Html
           ls -R
-          
-      - name: Publicar resultados dos testes unitarios
+
+      - name: Upload Unit test results
         uses: actions/upload-artifact@v3
         if: always()
         with:
           name: unit-test-results
           path: coveragereport/
-          
- e2e-tests:
+
+  e2e-tests:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      
+      - uses: actions/checkout@v3
+
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '6.x'
           include-prerelease: true
 
-    # Passo para instalar Docker
       - name: Install Docker
         run: |
           sudo apt-get update
@@ -190,7 +190,6 @@ jobs:
           sudo sh get-docker.sh
           sudo usermod -aG docker $USER
 
-    # Passo para instalar Docker Compose
       - name: Install Docker Compose
         run: |
           DOCKER_COMPOSE_VERSION=1.29.2
@@ -198,41 +197,39 @@ jobs:
           sudo chmod +x /usr/local/bin/docker-compose
           docker-compose --version  # Verifica se o Docker Compose foi instalado corretamente
 
-          
-      - name: Rodar E2E testes
+      - name: Run E2E tests
         run: |
           dotnet test tests/Identity.SpecFlow.Tests/Identity.SpecFlow.Tests.csproj \
           --logger "trx;LogFileName=test-results.trx" # Gerando arquivo de resultados no formato TRX
 
-      # Publicar os resultados dos testes (Arquivo TRX)
-      - name: Publicar resultados dos testes
+      - name: Upload E2E test results
         uses: actions/upload-artifact@v3
         if: always()
         with:
           name: test-results
           path: tests/Identity.SpecFlow.Tests/TestResults/test-results.trx
-          
+
       - name: Living Docs HTML
         if: always()
         run: |
           dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI
           livingdoc test-assembly tests/Identity.SpecFlow.Tests/bin/Debug/net6.0/Identity.SpecFlow.Tests.dll -t tests/Identity.SpecFlow.Tests/bin/Debug/net6.0/TestExecution.json --project-language pt-br
 
-      - name: Publicar resultados Living Docs
+      - name: Upload Living Docs results
         uses: actions/upload-artifact@v3
         if: always()
         with:
           name: LivingDocs-results
           path: LivingDoc.html
 
-
-      - name: Publicar vídeos gerados
+      - name: Upload generated videos
         uses: actions/upload-artifact@v3
         if: always()
         with:
           name: videos
           path: videos/* # Todos os arquivos dentro da pasta "videos"
- deploy:
+
+  deploy:
     runs-on: ubuntu-latest
     needs: e2e-tests
     environment:
