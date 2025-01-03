@@ -39,7 +39,7 @@ jobs:
           name: angular-coverage-report
           path: Identity/client/coverage
           
-build:
+ build:
     runs-on: ubuntu-latest
 
     steps:
@@ -63,7 +63,7 @@ build:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
 
-  trivy-scan:
+ trivy-scan:
     runs-on: ubuntu-latest
 
     steps:
@@ -88,7 +88,7 @@ build:
         name: trivy-report
         path: trivy-report.html
 
-  benchmark-tests:
+ benchmark-tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -130,7 +130,7 @@ build:
           name: BenchmarkDotNet.Artifacts
           path: BenchmarkDotNet.Artifacts/
 
-  Unit-tests:
+ Unit-tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -170,7 +170,7 @@ build:
           name: unit-test-results
           path: coveragereport/
           
-  e2e-tests:
+ e2e-tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -232,8 +232,7 @@ build:
         with:
           name: videos
           path: videos/* # Todos os arquivos dentro da pasta "videos"
-
-  deploy:
+ deploy:
     runs-on: ubuntu-latest
     needs: e2e-tests
     environment:
