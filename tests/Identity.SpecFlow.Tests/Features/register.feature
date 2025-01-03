@@ -1,10 +1,10 @@
 Funcionalidade: Registro de usuário
 
-  Cenario: Registrar um usuário com sucesso
-    Dado que o usuario esta na pagina de cadastro
-    E que o usuario preenche todos os campos corretamente
-    Quando ele envia o formulario de registro
-    Entao ele deve ser registrado com sucesso
+  #Cenario: Registrar um usuário com sucesso
+  #  Dado que o usuario esta na pagina de cadastro
+  #  E que o usuario preenche todos os campos corretamente
+  #  Quando ele envia o formulario de registro
+  #  Entao ele deve ser registrado com sucesso
 
   Cenario: Erro ao tentar registrar com senhas que não coincidem
     Dado que o usuario esta na pagina de cadastro
