@@ -19,12 +19,12 @@ namespace Identity.Domain.Services
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IEmailService _emailService;
-        private readonly IWhatsAppService _whatsAppService;
+        //private readonly IWhatsAppService _whatsAppService;
 
-        public TwoFactorAuthService(UserManager<ApplicationUser> userManager, IEmailService emailService, IWhatsAppService whatsAppService)
+        public TwoFactorAuthService(UserManager<ApplicationUser> userManager, IEmailService emailService/*, IWhatsAppService whatsAppService*/)
         {
             _userManager = userManager;
-            _whatsAppService = whatsAppService;
+            //_whatsAppService = whatsAppService;
             _emailService = emailService;
         }
 
@@ -43,7 +43,7 @@ namespace Identity.Domain.Services
             else if (method == "Phone")
             {
                 // Enviar por SMS
-                await _whatsAppService.SendSmsAsync(user.PhoneNumber, $"Seu código de 2FA é: {code}");
+                //await _whatsAppService.SendSmsAsync(user.PhoneNumber, $"Seu código de 2FA é: {code}");
             }
 
             return code;

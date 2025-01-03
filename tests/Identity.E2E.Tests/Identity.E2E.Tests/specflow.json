@@ -10,6 +10,14 @@
     ],
     "bindingCulture": {
       "name": "pt-BR"
-    }
+    },
+    "plugins": [
+      {
+        "name": "SpecFlow.LivingDocPlugin",
+        "parameters": {
+          "LivingDocFile": "livingdocs.json"
+        }
+      }
+    ]
   }
 }

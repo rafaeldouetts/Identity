@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "7eDWsC+tSLBj5EmMNwaoOzfweEOko0FHWOD9w/hwGpgXAhPuKJPSMkqZxAdSB/XuW6/0CVegfWjKIiuO2Fv/jA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\r_san\\Documents\\projetos\\Identity\\tests\\Identity.Shared.Tests\\Identity.Shared.Tests.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\r_san\\.nuget\\packages\\ductus.fluentdocker\\2.10.59\\ductus.fluentdocker.2.10.59.nupkg.sha512",
+    "C:\\Users\\r_san\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\r_san\\.nuget\\packages\\sharpcompress\\0.29.0\\sharpcompress.0.29.0.nupkg.sha512"
+  ],
+  "logs": []
+}

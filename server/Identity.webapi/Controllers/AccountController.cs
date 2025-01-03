@@ -14,6 +14,7 @@ using Identity.Domain.Services;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
+using Identity.Domain.Services.Interfaces;
 
 namespace Identity.API.Controllers
 {
@@ -28,10 +29,10 @@ namespace Identity.API.Controllers
         //private readonly IRedisService _redisService;
         private readonly ITokenService _tokenService;
         private readonly IEmailService _emailService; 
-        private readonly IWhatsAppService _whatsAppService;
+        private readonly IWhatsappService _whatsAppService;
         private readonly ITwoFactorAuthService _twoFactorAuthService;
 
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IConfiguration configuration, IBlobService blobService, ITokenService tokenService, IEmailService emailService, IWhatsAppService whatsAppService, ITwoFactorAuthService twoFactorAuthService)
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IConfiguration configuration, IBlobService blobService, ITokenService tokenService, IEmailService emailService, /*IWhatsAppService whatsAppService,*/ ITwoFactorAuthService twoFactorAuthService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -40,7 +41,7 @@ namespace Identity.API.Controllers
             //_redisService = redisService;
             _tokenService = tokenService;
             _emailService = emailService;
-            _whatsAppService = whatsAppService;
+            //_whatsAppService = whatsAppService;
             _twoFactorAuthService = twoFactorAuthService;
         }
 
@@ -56,6 +57,18 @@ namespace Identity.API.Controllers
 
                 var user = new ApplicationUser { UserName = model.Nome, Email = model.Email, FullName = model.Nome, PhoneNumber = model.Telefone };
                 var result = await _userManager.CreateAsync(user, model.Password);
+
+                var telefone = new Parameters(user.PhoneNumber);
+                var email = new Parameters(user.Email);
+                var DataNascimento = new Parameters(model.DataNascimento.ToString());
+                //var servico = new Parameters();
+
+                var list = new List<Parameters>();
+                list.Add(telefone);
+                list.Add(email);
+                list.Add(DataNascimento);
+
+                await _whatsAppService.EnviarMensagem("5511974247544", "notificacao_cadastro", list);
 
                 if (result.Succeeded)
                 {
@@ -273,7 +286,7 @@ namespace Identity.API.Controllers
             var token = await _tokenService.GeneratePhoneConfirmationTokenAsync(user);
 
             // Enviar o token por SMS para o número de telefone
-            await _whatsAppService.SendSmsAsync(user.PhoneNumber, $"Seu token de confirmação é: {token}");
+            //await _whatsAppService.SendSmsAsync(user.PhoneNumber, $"Seu token de confirmação é: {token}");
 
             //await _redisService.SetValueAsync($"token_PhoneNumber_confirmation_{model.PhoneNumber}", token, TimeSpan.FromMinutes(10));
 

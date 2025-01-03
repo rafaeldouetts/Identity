@@ -1,69 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-
-using Ductus.FluentDocker;
+﻿
 using Ductus.FluentDocker.Model.Compose;
 using Ductus.FluentDocker.Services;
 using Ductus.FluentDocker.Services.Impl;
-using Identity.SpecFlow.Tests.Support;
+using Identity.Shared.Tests;
 
 namespace Identity.SpecFlow.Tests.Hook
 {
     [Binding]
     public class DockerComposeHook
     {
-        public static ICompositeService CompositeService { get; private set; }
-        public static IHostService DockerHost { get; private set; }
-
         [AfterTestRun]
         public static void AfterTestRun()
         {
-            CompositeService.Dispose();
-            DockerHost.Dispose();
+            DockerComposeService.Dispose();
         }
 
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
-            // Certifique-se de que o Docker Host está em execução
-            EnsureDockerHost();
-
-            // Caminho para o arquivo docker-compose.yml
-            var projectDirectory = FileSupport.GetSolutionDirectory();
-
-            string dockerComposeFile = Path.Combine(projectDirectory, "docker-compose.yml");
-
-            // Configuração para o Docker Compose
-            var config = new DockerComposeConfig
-            {
-                ComposeFilePath = new[] { dockerComposeFile },
-                ForceRecreate = true, // Forçar a recriação dos contêineres
-                RemoveOrphans = true, // Remover contêineres órfãos
-                StopOnDispose = true  // Parar os contêineres ao descartar a fixture
-            };
-
-            // Criar o serviço Docker Compose
-            CompositeService = new DockerComposeCompositeService(DockerHost, config);
-
-            // Iniciar os contêineres
-            CompositeService.Start();
-        }
-
-        private static void EnsureDockerHost()
-        {
-            // Verificar se o Docker Host está em execução
-            if (DockerHost?.State == ServiceRunningState.Running)
-                return;
-
-            // Descobrir os hosts Docker disponíveis
-            var hosts = new Hosts().Discover();
-
-            // Selecionar o Docker Host nativo ou o padrão, se disponível
-            DockerHost = hosts.FirstOrDefault(x => x.IsNative) ?? hosts.FirstOrDefault(x => x.Name == "default");
-
-            // Iniciar o Docker Host, se necessário
-            if (DockerHost?.State != ServiceRunningState.Running)
-                DockerHost?.Start();
+            DockerComposeService.RunDockerCompose();
         }
     }
 }

@@ -2139,6 +2139,19 @@
             "related": ".xml"
           }
         }
+      },
+      "Identity.Shared.Tests/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Ductus.FluentDocker": "2.10.59"
+        },
+        "compile": {
+          "bin/placeholder/Identity.Shared.Tests.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Identity.Shared.Tests.dll": {}
+        }
       }
     }
   },
@@ -7072,12 +7085,17 @@
         "xunit.skippablefact.1.3.12.nupkg.sha512",
         "xunit.skippablefact.nuspec"
       ]
+    },
+    "Identity.Shared.Tests/1.0.0": {
+      "type": "project",
+      "path": "../Identity.Shared.Tests/Identity.Shared.Tests.csproj",
+      "msbuildProject": "../Identity.Shared.Tests/Identity.Shared.Tests.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Ductus.FluentDocker >= 2.10.59",
       "FluentAssertions >= 6.2.0",
+      "Identity.Shared.Tests >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.0.0",
       "Selenium.WebDriver >= 4.27.0",
       "SpecFlow.Plus.LivingDocPlugin >= 3.9.57",
@@ -7119,7 +7137,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\r_san\\Documents\\projetos\\Identity\\tests\\Identity.Shared.Tests\\Identity.Shared.Tests.csproj": {
+              "projectPath": "C:\\Users\\r_san\\Documents\\projetos\\Identity\\tests\\Identity.Shared.Tests\\Identity.Shared.Tests.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -7137,10 +7159,6 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
-          "Ductus.FluentDocker": {
-            "target": "Package",
-            "version": "[2.10.59, )"
-          },
           "FluentAssertions": {
             "target": "Package",
             "version": "[6.2.0, )"

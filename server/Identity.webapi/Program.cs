@@ -99,7 +99,7 @@ builder.Services.AddTransient<IBlobService, BlobService>();
 //builder.Services.AddTransient<IRedisService, RedisService>();
 builder.Services.AddTransient<ITokenService, TokenService>();
 builder.Services.AddTransient<IEmailService, EmailService>();
-builder.Services.AddTransient<IWhatsAppService, WhatsAppService>();
+//builder.Services.AddTransient<IWhatsAppService, WhatsAppService>();
 builder.Services.AddTransient<ITwoFactorAuthService, TwoFactorAuthService>();
 
 

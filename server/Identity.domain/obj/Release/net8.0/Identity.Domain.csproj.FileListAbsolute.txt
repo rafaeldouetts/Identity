@@ -1,0 +1,16 @@
+C:\Users\r_san\Documents\projetos\Identity\server\Identity.domain\bin\Release\net8.0\Identity.Domain.deps.json
+C:\Users\r_san\Documents\projetos\Identity\server\Identity.domain\bin\Release\net8.0\Identity.Domain.dll
+C:\Users\r_san\Documents\projetos\Identity\server\Identity.domain\bin\Release\net8.0\Identity.Domain.pdb
+C:\Users\r_san\Documents\projetos\Identity\server\Identity.domain\bin\Release\net8.0\Identity.Infra.dll
+C:\Users\r_san\Documents\projetos\Identity\server\Identity.domain\bin\Release\net8.0\Identity.Infra.pdb
+C:\Users\r_san\Documents\projetos\Identity\server\Identity.domain\obj\Release\net8.0\Identity.Domain.csproj.AssemblyReference.cache
+C:\Users\r_san\Documents\projetos\Identity\server\Identity.domain\obj\Release\net8.0\Identity.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\r_san\Documents\projetos\Identity\server\Identity.domain\obj\Release\net8.0\Identity.Domain.AssemblyInfoInputs.cache
+C:\Users\r_san\Documents\projetos\Identity\server\Identity.domain\obj\Release\net8.0\Identity.Domain.AssemblyInfo.cs
+C:\Users\r_san\Documents\projetos\Identity\server\Identity.domain\obj\Release\net8.0\Identity.Domain.csproj.CoreCompileInputs.cache
+C:\Users\r_san\Documents\projetos\Identity\server\Identity.domain\obj\Release\net8.0\Identity.Domain.sourcelink.json
+C:\Users\r_san\Documents\projetos\Identity\server\Identity.domain\obj\Release\net8.0\Identity.AFA9DB19.Up2Date
+C:\Users\r_san\Documents\projetos\Identity\server\Identity.domain\obj\Release\net8.0\Identity.Domain.dll
+C:\Users\r_san\Documents\projetos\Identity\server\Identity.domain\obj\Release\net8.0\refint\Identity.Domain.dll
+C:\Users\r_san\Documents\projetos\Identity\server\Identity.domain\obj\Release\net8.0\Identity.Domain.pdb
+C:\Users\r_san\Documents\projetos\Identity\server\Identity.domain\obj\Release\net8.0\ref\Identity.Domain.dll
