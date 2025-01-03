@@ -10,7 +10,40 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build-front-end:
+    runs-on: ubuntu-latest
+    
+    steps:
+    # Checkout do código do repositório
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Configurar o Node.js (Angular)
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20.10.0'
+
+    # Instalar as dependências do Angular
+    - name: Install Angular dependencies
+      run: |
+        cd client/Identity.WebAPI/
+        npm install
+
+ # Rodar o build do Angular (para produção)
+    - name: Build Angular app
+      run: |
+        cd client/Identity.WebAPI/
+        ng build
+
+    - name: Upload artifact for deployment job
+      uses: actions/upload-artifact@v3
+      with:
+        name: .angular-app
+        path: client/Identity.WebAPI/dist/identity.web-api/browser
+
+        
+  build-back-end:
     runs-on: ubuntu-latest
 
     steps:
@@ -36,7 +69,7 @@ jobs:
 
   trivy-scan:
     runs-on: ubuntu-latest
-    needs: build
+    needs:  build-back-end
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -61,7 +94,7 @@ jobs:
 
   trivy-scan-front-end:
     runs-on: ubuntu-latest
-    needs: build
+    needs: build-front-end
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
