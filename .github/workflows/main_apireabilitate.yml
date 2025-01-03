@@ -14,35 +14,33 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    # Checkout do código do repositório
-    - name: Checkout code
-      uses: actions/checkout@v3
+      # Checkout do código do repositório
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    # Configurar o Node.js (Angular)
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '20.10.0'
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.10.0'
 
-    # Instalar as dependências do Angular
-    - name: Install Angular dependencies
-      run: |
-        cd client/Identity.WebAPI/
-        npm install
+      - name: Install dependencies for Angular
+        run: |
+          cd client/Identity.WebAPI/
+          npm install -g @angular/cli
+          npm install
 
- # Rodar o build do Angular (para produção)
-    - name: Build Angular app
-      run: |
-        cd client/Identity.WebAPI/
-        ng build
+    # Rodar o build do Angular (para produção)
+      - name: Build Angular app
+        run: |
+          cd client/Identity.WebAPI/
+          ng build
 
-    - name: Upload artifact for deployment job
-      uses: actions/upload-artifact@v3
-      with:
-        name: .angular-app
-        path: client/Identity.WebAPI/dist/identity.web-api/browser
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v3
+        with:
+          name: .angular-app
+          path: client/Identity.WebAPI/dist/identity.web-api/browser
 
-        
   build-back-end:
     runs-on: ubuntu-latest
 
