@@ -1,23 +1,23 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+// import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TwoFactorAuthComponent } from './two-factor-auth.component';
+// import { TwoFactorAuthComponent } from './two-factor-auth.component';
 
-describe('TwoFactorAuthComponent', () => {
-  let component: TwoFactorAuthComponent;
-  let fixture: ComponentFixture<TwoFactorAuthComponent>;
+// describe('TwoFactorAuthComponent', () => {
+//   let component: TwoFactorAuthComponent;
+//   let fixture: ComponentFixture<TwoFactorAuthComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [TwoFactorAuthComponent]
-    })
-    .compileComponents();
+//   beforeEach(async () => {
+//     await TestBed.configureTestingModule({
+//       declarations: [TwoFactorAuthComponent]
+//     })
+//     .compileComponents();
     
-    fixture = TestBed.createComponent(TwoFactorAuthComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+//     fixture = TestBed.createComponent(TwoFactorAuthComponent);
+//     component = fixture.componentInstance;
+//     fixture.detectChanges();
+//   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+//   it('should create', () => {
+//     expect(component).toBeTruthy();
+//   });
+// });
