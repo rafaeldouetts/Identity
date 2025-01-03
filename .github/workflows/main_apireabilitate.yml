@@ -39,7 +39,7 @@ jobs:
           name: angular-coverage-report
           path: Identity/client/coverage
           
-  build:
+build:
     runs-on: ubuntu-latest
 
     steps:
