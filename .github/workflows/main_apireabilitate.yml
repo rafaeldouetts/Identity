@@ -45,7 +45,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: angular-coverage-report
-          path: Identity/client/coverage/
+          path: client/Identity.WebAPI//coverage/
 
   build:
     runs-on: ubuntu-latest
