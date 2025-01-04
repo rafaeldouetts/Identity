@@ -1,1 +1,0 @@
-C:\Users\r_san\Documents\projetos\Identity\client\Identity.WebAPI\obj\Debug\Identity.WebAPP.esproj.CoreCompileInputs.cache
