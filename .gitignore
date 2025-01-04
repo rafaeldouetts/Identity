@@ -7,3 +7,4 @@
 .vs/
 **/**/**/coveragereport
 **/**/**/TestResults
+**/**/**/BenchmarkDotNet.Artifacts
