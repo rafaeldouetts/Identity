@@ -25,7 +25,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Identity.Blob\Identity.Blob.csproj" />
     <ProjectReference Include="..\Identity.domain\Identity.Domain.csproj" />
-    <ProjectReference Include="..\Identity.Infra\Identity.Infra.csproj" />
   </ItemGroup>
 
 </Project>

@@ -16,7 +16,7 @@ namespace Identity.Shared.Tests
             DockerHost.Dispose();
         }
 
-        public static void RunDockerCompose()
+        public static void RunDockerCompose(string docker = "docker-compose.yml")
         {
             // Certifique-se de que o Docker Host está em execução
             EnsureDockerHost();
@@ -24,7 +24,7 @@ namespace Identity.Shared.Tests
             // Caminho para o arquivo docker-compose.yml
             var projectDirectory = FileSupport.GetSolutionDirectory();
 
-            string dockerComposeFile = Path.Combine(projectDirectory, "docker-compose.yml");
+            string dockerComposeFile = Path.Combine(projectDirectory, docker);
 
             // Configuração para o Docker Compose
             var config = new DockerComposeConfig

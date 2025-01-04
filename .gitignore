@@ -1,0 +1,7 @@
+# Ignorar todas as pastas bin e obj
+**/**/obj/
+**/**/**/obj/
+**/**/bin/
+**/**/**/bin/
+/videos/
+.vs/
