@@ -187,12 +187,15 @@ jobs:
         run: |
           dotnet tool install --global coverlet.console
           dotnet tool install --global dotnet-reportgenerator-globaltool
+          dotnet tool install --global dotnet-stryker
           dotnet test tests/Identity.Unit.Tests/Identity.Unit.Tests.csproj --verbosity minimal --collect:"XPlat Code Coverage"
 
       - name: Generate Unit test report
         if: always()
         run: |
           reportgenerator "-reports:**/**/coverage.cobertura.xml" "-targetdir:coveragereport" -reporttypes:Html
+          cd tests/Identity.Unit.Tests/
+          dotnet-stryker -l complete
 
       - name: Upload Unit test results
         uses: actions/upload-artifact@v3
@@ -200,6 +203,13 @@ jobs:
         with:
           name: unit-test-results
           path: coveragereport/
+
+      - name: Upload dotnet-stryker results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: dotnet-stryker-results
+          path: StrykerOutput/
 
   integration-tests:
     runs-on: ubuntu-latest
@@ -231,6 +241,7 @@ jobs:
         run: |
           dotnet tool install --global dotnet-reportgenerator-globaltool
           dotnet test tests/Identity.Intagration.Tests/Identity.Intagration.Tests.csproj --verbosity minimal --collect:"XPlat Code Coverage"
+          reportgenerator "-reports:**/**/coverage.cobertura.xml" "-targetdir:coveragereport" -reporttypes:Html
 
       - name: Upload Integration tests results
         uses: actions/upload-artifact@v3
