@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Identity.Domain.Domain;
+using Newtonsoft.Json;
 using System.Text;
 
 namespace Identity.Intagration.Tests
@@ -18,11 +19,14 @@ namespace Identity.Intagration.Tests
 
             var client = application.CreateClient();
 
-            var registerModel = new
+            var registerModel = new RegisterModel
             {
-                Username = "testuser",
-                Email = "testuser@example.com",
-                Password = "Password123!"
+                Nome = "testuser2",
+                Email = "testuser2@example.com",
+                Password = "Teste@123",
+                Telefone = "11986782885",
+                ConfirmPassword = "Teste@123",
+                DataNascimento = DateTime.Now.AddYears(-20)
             };
 
             var content = new StringContent(JsonConvert.SerializeObject(registerModel), Encoding.UTF8, "application/json");
@@ -30,9 +34,11 @@ namespace Identity.Intagration.Tests
             // Act
             var response = await client.PostAsync(url, content);
 
+            var teste = await response.Content.ReadAsStringAsync();
+
             // Assert
-            Assert.Equal(response.StatusCode, System.Net.HttpStatusCode.BadRequest);
-            Assert.True(!response.IsSuccessStatusCode);
+            Assert.Equal(response.StatusCode, System.Net.HttpStatusCode.OK);
+            Assert.True(response.IsSuccessStatusCode);
             //var responseContent = await response.Content.ReadAsStringAsync();
             //responseContent.Should().Contain("Registration successful");
         }

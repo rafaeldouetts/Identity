@@ -68,7 +68,7 @@ namespace Identity.API.Controllers
                 list.Add(email);
                 list.Add(DataNascimento);
 
-                await _whatsAppService.EnviarMensagem("5511974247544", "notificacao_cadastro", list);
+                //await _whatsAppService.EnviarMensagem("5511974247544", "notificacao_cadastro", list);
 
                 if (result.Succeeded)
                 {

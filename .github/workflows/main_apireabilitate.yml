@@ -193,7 +193,6 @@ jobs:
         if: always()
         run: |
           reportgenerator "-reports:**/**/coverage.cobertura.xml" "-targetdir:coveragereport" -reporttypes:Html
-          ls -R
 
       - name: Upload Unit test results
         uses: actions/upload-artifact@v3
@@ -230,7 +229,15 @@ jobs:
 
       - name: Run Integration tests
         run: |
-          dotnet test tests/Identity.Intagration.Tests/Identity.Intagration.Tests.csproj
+          dotnet tool install --global dotnet-reportgenerator-globaltool
+          dotnet test tests/Identity.Intagration.Tests/Identity.Intagration.Tests.csproj --verbosity minimal --collect:"XPlat Code Coverage"
+
+      - name: Upload Integration tests results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: integration-tests-results
+          path: coveragereport/
 
   e2e-tests:
     runs-on: ubuntu-latest
@@ -268,7 +275,7 @@ jobs:
         uses: actions/upload-artifact@v3
         if: always()
         with:
-          name: test-results
+          name: e2e-tests-results
           path: tests/Identity.SpecFlow.Tests/TestResults/test-results.trx
 
       - name: Living Docs HTML
@@ -281,15 +288,8 @@ jobs:
         uses: actions/upload-artifact@v3
         if: always()
         with:
-          name: LivingDocs-results
+          name: e2e-tests-LivingDocs-results
           path: LivingDoc.html
-
-      - name: Upload generated videos
-        uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: videos
-          path: videos/* # Todos os arquivos dentro da pasta "videos"
 
   benchmark-tests:
     runs-on: ubuntu-latest
@@ -330,7 +330,7 @@ jobs:
         uses: actions/upload-artifact@v3
         if: always()
         with:
-          name: BenchmarkDotNet.Artifacts
+          name: benchmark-tests-results
           path: BenchmarkDotNet.Artifacts/
 
   deploy:

@@ -5,3 +5,5 @@
 **/**/**/bin/
 /videos/
 .vs/
+**/**/**/coveragereport
+**/**/**/TestResults
