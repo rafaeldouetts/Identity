@@ -65,7 +65,7 @@ jobs:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
 
-  trivy-scan:
+  trivy-scan-back-end:
     runs-on: ubuntu-latest
     needs:  build-back-end
     steps:
@@ -115,7 +115,7 @@ jobs:
           name: trivy-report-front-end
           path: trivy-report.html
 
-  test-angular:
+  unit-test-front-end:
     runs-on: ubuntu-latest
     needs: trivy-scan-front-end
     steps:
@@ -154,7 +154,7 @@ jobs:
 
   arc-tests:
     runs-on: ubuntu-latest
-    needs: trivy-scan
+    needs: trivy-scan-back-end
     steps:
       - uses: actions/checkout@v3
 
@@ -168,7 +168,7 @@ jobs:
         run: |
           dotnet test tests/Identity.ArchUnit.Tests/Identity.ArchUnit.Tests.csproj
           
-  unit-tests:
+  unit-tests-back-end:
     runs-on: ubuntu-latest
     needs: arc-tests
     steps:
@@ -204,7 +204,7 @@ jobs:
 
   integration-tests:
     runs-on: ubuntu-latest
-    needs: unit-tests
+    needs: unit-tests-back-end
     steps:
       - uses: actions/checkout@v3
 
@@ -234,7 +234,7 @@ jobs:
 
   e2e-tests:
     runs-on: ubuntu-latest
-    needs: [integration-tests, test-angular]
+    needs: [integration-tests, unit-test-front-end]
     steps:
       - uses: actions/checkout@v3
 
@@ -333,7 +333,7 @@ jobs:
           name: BenchmarkDotNet.Artifacts
           path: BenchmarkDotNet.Artifacts/
 
-  deploy:
+  deploy-back-end:
     runs-on: ubuntu-latest
     needs: benchmark-tests
     environment:
