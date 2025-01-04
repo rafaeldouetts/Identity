@@ -1,0 +1,7 @@
+{
+  "Identity.Blob, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\r_san\\Documents\\projetos\\Identity\\server\\Identity.Blob",
+  "Identity.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\r_san\\Documents\\projetos\\Identity\\server\\Identity.domain",
+  "Identity.Infra, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\r_san\\Documents\\projetos\\Identity\\server\\Identity.Infra",
+  "Identity.Shared.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\r_san\\Documents\\projetos\\Identity\\tests\\Identity.Shared.Tests",
+  "Identity.webapi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\r_san\\Documents\\projetos\\Identity\\server\\Identity.webapi"
+}

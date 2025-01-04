@@ -13,9 +13,16 @@
     <PackageReference Include="coverlet.collector" Version="6.0.0" />
     <PackageReference Include="Ductus.FluentDocker" Version="2.10.59" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.11" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
     <PackageReference Include="xunit" Version="2.5.3" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.5.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\server\Identity.Infra\Identity.Infra.csproj" />
+    <ProjectReference Include="..\..\server\Identity.webapi\Identity.webapi.csproj" />
+    <ProjectReference Include="..\Identity.Shared.Tests\Identity.Shared.Tests.csproj" />
   </ItemGroup>
 
   <ItemGroup>

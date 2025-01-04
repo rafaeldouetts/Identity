@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Identity.Intagration.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0debeede3fa086829b91ded8c0220d59049817f6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+caae5f5613808bf0df5b9b2787315f1642a7669c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Identity.Intagration.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Identity.Intagration.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
