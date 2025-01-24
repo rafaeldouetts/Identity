@@ -225,6 +225,7 @@ jobs:
         if: always()
         run: |
           cd tests/Identity.Unit.Tests/
+          dotnet test 
           dotnet-stryker -l complete
 
       - name: Upload dotnet-stryker results
