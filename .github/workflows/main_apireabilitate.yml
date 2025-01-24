@@ -229,7 +229,7 @@ jobs:
         if: always()
         with:
           name: dotnet-stryker-results
-          path: /tests/Identity.Unit.Tests/StrykerOutput/
+          path: ./tests/Identity.Unit.Tests/StrykerOutput
 
   integration-tests:
     runs-on: ubuntu-latest
