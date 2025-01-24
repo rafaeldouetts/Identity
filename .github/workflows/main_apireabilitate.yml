@@ -137,13 +137,6 @@ jobs:
         run: |
           cd client/Identity.WebAPI/
           ng test --watch=false --browsers=ChromeHeadless --code-coverage
-
-      - name: List files
-        if: always()
-        run: |
-          echo "Arquivos:"
-          ls -R
-
           
       - name: Upload coverage report
         if: always()
@@ -224,6 +217,12 @@ jobs:
           dotnet tool install --global dotnet-stryker
           dotnet test 
           dotnet-stryker -l complete
+
+      - name: List files
+        if: always()
+        run: |
+          echo "Arquivos:"
+          ls -R
 
       - name: Upload dotnet-stryker results
         uses: actions/upload-artifact@v3
