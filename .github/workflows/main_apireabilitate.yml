@@ -194,7 +194,6 @@ jobs:
         run: |
           reportgenerator "-reports:**/**/coverage.cobertura.xml" "-targetdir:coveragereport" -reporttypes:Html
           cd tests/Identity.Unit.Tests/
-          dotnet-stryker -l complete
 
       - name: Upload Unit test results
         uses: actions/upload-artifact@v3
