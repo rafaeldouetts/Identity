@@ -197,7 +197,7 @@ jobs:
           
   Stryker-tests-back-end:
     runs-on: ubuntu-latest
-    needs: arc-tests
+    needs: unit-tests-back-end
     steps:
       - uses: actions/checkout@v3
 
@@ -233,7 +233,7 @@ jobs:
 
   integration-tests:
     runs-on: ubuntu-latest
-    needs: unit-tests-back-end
+    needs: Stryker-tests-back-end
     steps:
       - uses: actions/checkout@v3
 
