@@ -217,14 +217,11 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore
 
-      - name: Run Unit tests
-        run: |
-          dotnet tool install --global dotnet-stryker
-
-      - name: Generate Unit test report
+      - name: Generate Stryker report
         if: always()
         run: |
           cd tests/Identity.Unit.Tests/
+          dotnet tool install --global dotnet-stryker
           dotnet test 
           dotnet-stryker -l complete
 
