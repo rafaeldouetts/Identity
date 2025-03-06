@@ -106,7 +106,7 @@ services:
       - selenium-hub
 
   chrome_video:
-    image: selenium/video:ffmpeg-6.1.1-20240621
+    image: selenium/video:ffmpeg-7.0.1-20240812
     volumes:
       - ./videos:/videos
     depends_on:
