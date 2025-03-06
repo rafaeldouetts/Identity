@@ -36,7 +36,7 @@ jobs:
           ng build
 
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: .angular-app
           path: client/Identity.WebAPI/dist/identity.web-api/browser
@@ -60,7 +60,7 @@ jobs:
         run: dotnet publish server/Identity.webapi/Identity.webapi.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
@@ -85,7 +85,7 @@ jobs:
           trivy image --format template --template "@/usr/bin/html.tpl" -o trivy-report.html identity
 
       - name: Upload Trivy report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: trivy-report-back-end
           path: trivy-report.html
@@ -110,7 +110,7 @@ jobs:
           trivy image --format template --template "@/usr/bin/html.tpl" -o trivy-report.html identity
 
       - name: Upload Trivy report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: trivy-report-front-end
           path: trivy-report.html
@@ -140,7 +140,7 @@ jobs:
           
       - name: Upload coverage report
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: angular-coverage-report
           path: client/Identity.WebAPI//coverage/
@@ -189,7 +189,7 @@ jobs:
           cd tests/Identity.Unit.Tests/
 
       - name: Upload Unit test results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: unit-test-results
@@ -225,7 +225,7 @@ jobs:
           ls -R
 
       - name: Upload dotnet-stryker results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: dotnet-stryker-results
@@ -264,7 +264,7 @@ jobs:
           reportgenerator "-reports:**/**/coverage.cobertura.xml" "-targetdir:coveragereport" -reporttypes:Html
 
       - name: Upload Integration tests results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: integration-tests-results
@@ -302,8 +302,14 @@ jobs:
           dotnet test tests/Identity.SpecFlow.Tests/Identity.SpecFlow.Tests.csproj \
           --logger "trx;LogFileName=test-results.trx" # Gerando arquivo de resultados no formato TRX
 
+      - name: List files
+        if: always()
+        run: |
+          echo "Arquivos:"
+          ls -R
+          
       - name: Upload E2E test results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: e2e-tests-results
@@ -316,7 +322,7 @@ jobs:
           livingdoc test-assembly tests/Identity.SpecFlow.Tests/bin/Debug/net6.0/Identity.SpecFlow.Tests.dll -t tests/Identity.SpecFlow.Tests/bin/Debug/net6.0/TestExecution.json --project-language pt-br
 
       - name: Upload Living Docs results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: e2e-tests-LivingDocs-results
@@ -358,7 +364,7 @@ jobs:
           dotnet run --project tests/Identity.Benchmark.Tests/Identity.Benchmark.Tests.csproj -c Release
 
       - name: Publish Benchmark results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: benchmark-tests-results
