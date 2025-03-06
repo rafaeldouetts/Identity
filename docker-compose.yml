@@ -114,8 +114,8 @@ services:
     environment:
       - DISPLAY_CONTAINER_NAME=chrome-node
       - SE_NODE_GRID_URL=http://seleniumhub:4444
-      # - SE_VIDEO_FILE_NAME=auto
-      - SE_VIDEO_FILE_NAME=${VIDEO_NAME}  # Passa a variável de ambiente VIDEO_NAME
+      - SE_VIDEO_FILE_NAME=auto
+      # - SE_VIDEO_FILE_NAME=${VIDEO_NAME}  # Passa a variável de ambiente VIDEO_NAME
     networks:
       - identityNetwork
 
